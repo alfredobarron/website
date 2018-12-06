@@ -41,20 +41,20 @@
 
       <article class="markdown-section" id="main">
         <br>
-        <h2 class="subtitle"><span></span></h2>
+        <h2>Open Source</h2>
 
-        <h5>Laravel Scaffold</h5>
+        <h5 class="ls_title"><span></span></h5>
         <a href="https://github.com/modulr/laravel-scaffold" target="_blank"><pre><i class="fab fa-github"></i><code class="lang-php"> Github</code></pre></a>
         <a href="https://laravel-scaffold-docs.modulr.io/#/" target="_blank"><pre><i class="fas fa-file-alt"></i><code class="lang-php"> Documentation</code></pre></a>
         <a href="https://laravel-scaffold.modulr.io/" target="_blank"><pre><i class="fas fa-eye"></i><code class="lang-php"> Demo</code></pre></a>
         <a href="https://medium.com/modulr/create-scaffold-with-laravel-5-7-f5ab353dff1c" target="_blank"><pre><i class="fas fa-book"></i><code class="lang-php"> Tutorials</code></pre></a>
 
-        <h5>API Laravel Passport</h5>
+        <h5 class="alp_title"><span></span></h5>
         <a href="https://github.com/modulr/api-laravel-passport" target="_blank"><pre><i class="fab fa-github"></i><code class="lang-php"> Github</code></pre></a>
         <a href="https://documenter.getpostman.com/view/1657780/RW1ejGzL" target="_blank"><pre><i class="fab fa-chrome"></i><code class="lang-php"> Postman</code></pre></a>
         <a href="https://medium.com/modulr/create-api-authentication-with-passport-of-laravel-5-6-1dc2d400a7f" target="_blank"><pre><i class="fas fa-book"></i><code class="lang-php"> Tutorials</code></pre></a>
 
-        <h5>Smoke</h5>
+        <h5 class="smoke_title"><span></span></h5>
         <a href="https://github.com/alfredobarron/smoke" target="_blank"><pre><i class="fab fa-github"></i><code class="lang-php"> Github</code></pre></a>
         <a href="http://alfredobarron.github.io/smoke/#/" target="_blank"><pre><i class="fas fa-file-alt"></i><code class="lang-php"> Documentation</code></pre></a>
         <a href="https://codepen.io/alfredobarron/pen/rOgMvV" target="_blank"><pre><i class="fab fa-codepen"></i><code class="lang-php"> Codepen</code></pre></a>
@@ -65,17 +65,25 @@
         <br><br><br><br><br>
 
         ---
-        <p>@2018 - Designed and developed with 💙 by Alfredo Barron</p>
+        <p>@2018 - Developed with <i class="far fa-lightbulb"></i> <i class="fas fa-headphones"></i> <i class="fas fa-beer"></i></p>
 
         </article>
       </section>
     </main>
 </body>
 <script src="prism.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script src="typed.min.js"></script>
 <script>
-  new Typed(".subtitle span", {
-    strings: ["Open Source"],
+  new Typed(".ls_title span", {
+    strings: ["--Laravel Scaffold"],
+    typeSpeed: 40
+  });
+  new Typed(".alp_title span", {
+    strings: ["--API Laravel Passport"],
+    typeSpeed: 40
+  });
+  new Typed(".smoke_title span", {
+    strings: ["--Smoke"],
     typeSpeed: 40
   });
   function sidebarToggle() {

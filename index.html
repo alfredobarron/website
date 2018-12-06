@@ -57,8 +57,9 @@
 
 
         <h5 class="title"><span></span></h5>
-        <pre><code class="i_like"></code></pre>
-        <hr id="i_like_hr" class="hide"><br>
+        <br>
+        <div class="i_like"></div>
+        <hr id="i_like_hr" class="hide">
 
         <h5 id="sourcerer_title"><span></span></h5>
         <div id="sourcerer_content" class="hide">
@@ -82,55 +83,56 @@
 
         <h5 id="social_title"><span></span></h5>
         <div id="social_content" class="hide">
-          <a href="https://github.com/alfredobarron" target="_blank"><pre><i class="fab fa-github"></i><code class="lang-markdown"> GitHub</code></pre></a>
-          <a href="https://medium.com/@alfredobarron" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-markdown"> Medium</code></pre></a>
-          <a href="https://twitter.com/AlfredoBarronC" target="_blank"><pre><i class="fab fa-twitter"></i><code class="lang-markdown"> Twitter</code></pre></a>
-          <a href="https://mx.linkedin.com/in/alfredobarron" target="_blank"><pre><i class="fab fa-linkedin"></i><code class="lang-markdown"> Linkedin</code></pre></a>
+          <a href="https://github.com/alfredobarron" target="_blank"><pre class="inline-block"><i class="fab fa-github"></i><code class="lang-markdown"> GitHub</code></pre></a>
+          <a href="https://medium.com/@alfredobarron" target="_blank"><pre class="inline-block"><i class="fab fa-medium"></i><code class="lang-markdown"> Medium</code></pre></a>
+          <a href="https://twitter.com/AlfredoBarronC" target="_blank"><pre class="inline-block"><i class="fab fa-twitter"></i><code class="lang-markdown"> Twitter</code></pre></a>
+          <a href="https://mx.linkedin.com/in/alfredobarron" target="_blank"><pre class="inline-block"><i class="fab fa-linkedin"></i><code class="lang-markdown"> Linkedin</code></pre></a>
         </div>
 
         <br><br><br>
         <details id="contact" class="hide">
           <summary>Contact me (Click to expand)</summary>
           <br>
-          <a href="mailto:alfredo@modulr.io">alfredo@modulr.io</a>
+          <i class="far fa-envelope"></i> <a href="mailto:alfredo@modulr.io">alfredo@modulr.io</a>
         </details>
         <br><br><br><br><br>
 
         ---
-        <p>@2018 - Designed and developed with 💙 by Alfredo Barron</p>
+        <p>@2018 - Developed with <i class="far fa-lightbulb"></i> <i class="fas fa-headphones"></i> <i class="fas fa-beer"></i></p>
 
         </article>
       </section>
     </main>
 </body>
 <script src="prism.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script src="typed.min.js"></script>
 <script>
   var title = new Typed(".title span", {
-    strings: ["Software Architect"],
+    strings: [">_ Software Architect"],
     typeSpeed: 10,
     showCursor: false
   });
 
   new Typed(".i_like", {
-    strings: [`^200🖤 Open Source coder
-✍️ Tuturials writer
-🏍️ Motos, Viajes y 🎧 Musica`],
+    strings: [`<i class="fab fa-osi"></i> Open Source coder<br><br>
+<i class="fas fa-pencil-alt"></i> Tuturials writer<br><br>
+<i class="fas fa-motorcycle"></i> Me gusta viajar y andar en moto`],
     typeSpeed: 1,
     showCursor: false,
     onComplete: (self) => {
+      var element = document.getElementById("i_like_hr");
+      element.classList.add("show");
       new Typed("#sourcerer_title span", {
-        strings: ["Sourcerer profile"],
-        typeSpeed: 5,
+        strings: ["--Sourcerer profile"],
+        typeSpeed: 2,
         onComplete: (self) => {
-          var element = document.getElementById("i_like_hr");
-          element.classList.add("show");
           var element2 = document.getElementById("sourcerer_content");
           element2.classList.add("show");
 
           new Typed(".awards_title span", {
-            strings: ["Awards"],
+            strings: ["--Awards"],
             typeSpeed: 10,
+            showCursor: false,
             onComplete: () => {
               var element = document.getElementById("awards_content");
               element.classList.add("show");
@@ -138,8 +140,9 @@
           });
 
           new Typed("#speaking_title span", {
-            strings: ["^300 Speaking"],
+            strings: ["--Speaking"],
             typeSpeed: 10,
+            showCursor: false,
             onComplete: () => {
               var element = document.getElementById("speaking_content");
               element.classList.add("show");
@@ -147,8 +150,9 @@
           });
 
           new Typed("#social_title span", {
-            strings: ["^600 Social"],
+            strings: ["--Social"],
             typeSpeed: 10,
+            showCursor: false,
             onComplete: () => {
               var element = document.getElementById("social_content");
               element.classList.add("show");

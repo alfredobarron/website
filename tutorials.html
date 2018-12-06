@@ -41,13 +41,13 @@
 
       <article class="markdown-section" id="main">
         <br>
-        <h2 class="subtitle"><span></span></h2>
+        <h2>Tutorials</h2>
 
-        <h5>Laravel</h5>
+        <h5 class="laravel_title"><span></span></h5>
         <a href="https://medium.com/modulr/create-scaffold-with-laravel-5-7-f5ab353dff1c" target="_blank"><pre><i class="fab fa-medium"></i> <code class="lang-php">Create Scaffold with Laravel 5.7 — Authentication (Part 1)</code></pre></a>
         <a href="https://medium.com/modulr/create-api-authentication-with-passport-of-laravel-5-6-1dc2d400a7f" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Create API Rest with Laravel 5.6 Passport Authentication (Part 1)</code></pre></a>
 
-        <h5>AWS</h5>
+        <h5 class="aws_title"><span></span></h5>
         <a href="https://medium.com/modulr/como-instalar-lamp-stack-linux-apache-mysql-php-en-una-instancia-ec2-de-aws-con-ubuntu-16-04-bcf72b5d9937" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Como instalar LAMP (Linux, Apache, MySQL, PHP) en AWS</code></pre></a>
         <a href="https://medium.com/modulr/como-instalar-laravel-en-aws-1503d668432c" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Como Instalar Laravel en AWS</code></pre></a>
         <a href="https://medium.com/modulr/configurar-virtual-host-en-aws-6e58a6058815" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Configurar Virtual host en AWS</code></pre></a>
@@ -59,17 +59,21 @@
         <br><br><br><br><br>
 
         ---
-        <p>@2018 - Designed and developed with 💙 by Alfredo Barron</p>
+        <p>@2018 - Developed with <i class="far fa-lightbulb"></i> <i class="fas fa-headphones"></i> <i class="fas fa-beer"></i></p>
 
         </article>
       </section>
     </main>
 </body>
 <script src="prism.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script src="typed.min.js"></script>
 <script>
-  new Typed(".subtitle span", {
-    strings: ["Tutorials"],
+  new Typed(".laravel_title span", {
+    strings: ["--Laravel"],
+    typeSpeed: 40
+  });
+  new Typed(".aws_title span", {
+    strings: ["--AWS"],
     typeSpeed: 40
   });
   function sidebarToggle() {

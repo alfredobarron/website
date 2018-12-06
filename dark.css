@@ -351,7 +351,7 @@ body.sticky .sidebar-toggle {
 .markdown-section hr {
   border: none;
   border-bottom: 1px solid #545454;
-  margin: 2em 0;
+  margin: 2em 0 3em 0;
 }
 .markdown-section iframe {
   border: 1px solid #eee;
@@ -893,6 +893,10 @@ input[type='search'] {
   background: #4f4f4f;
   border-color: #4f4f4f;
   color: #c8c8c8;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .hide {
