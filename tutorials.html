@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alfredo Barron</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/dark.css">
+  <link rel="stylesheet" href="/prism.css">
+</head>
+<body id="app" class="ready sticky">
+  <!-- <div id="app">Loading...</div> -->
+  <main>
+    <button class="sidebar-toggle" onclick="sidebarToggle()">
+      <div class="sidebar-toggle-button">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+
+    <aside class="sidebar">
+      <div class="sidebar-nav">
+        <ul>
+          <li><a href="/"><i class="fas fa-file"></i> index.hmtl</a></li>
+          <li class="active"><a href="/tutorials.html"><i class="fas fa-file"></i> tutorials.html</a></li>
+          <li><a href="/open_source.html"><i class="fas fa-file"></i> open_source.html</a></li>
+        </ul>
+      </div>
+    </aside>
+    <section class="content">
+
+      <nav class="app-nav">
+        <a href="/">index.html</a>
+        <a class="active"href="/tutorials.html">tutorials.html</a>
+        <a href="/open_source.html">open_source.html</a>
+      </nav>
+
+      <article class="markdown-section" id="main">
+        <br><br>
+        <h3 class="subtitle"><span></span></h3>
+
+        <h5>Laravel</h5>
+        <a href="https://medium.com/modulr/create-scaffold-with-laravel-5-7-f5ab353dff1c" target="_blank"><pre><i class="fab fa-medium"></i> <code class="lang-php">Create Scaffold with Laravel 5.7 — Authentication (Part 1)</code></pre></a>
+        <a href="https://medium.com/modulr/create-api-authentication-with-passport-of-laravel-5-6-1dc2d400a7f" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Create API Rest with Laravel 5.6 Passport Authentication (Part 1)</code></pre></a>
+
+        <h5>AWS</h5>
+        <a href="https://medium.com/modulr/como-instalar-lamp-stack-linux-apache-mysql-php-en-una-instancia-ec2-de-aws-con-ubuntu-16-04-bcf72b5d9937" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Como instalar LAMP (Linux, Apache, MySQL, PHP) en AWS</code></pre></a>
+        <a href="https://medium.com/modulr/como-instalar-laravel-en-aws-1503d668432c" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Como Instalar Laravel en AWS</code></pre></a>
+        <a href="https://medium.com/modulr/configurar-virtual-host-en-aws-6e58a6058815" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Configurar Virtual host en AWS</code></pre></a>
+        <a href="https://medium.com/modulr/instalar-certificado-de-seguridad-ssl-en-aws-997c7bab4b52" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-php"> Instalar certificado de seguridad SSL en AWS</code></pre></a>
+
+        <br><br>
+        <a href="https://medium.com/modulr" target="_blank">Ver todos -></a>
+
+        <br><br><br><br><br>
+
+        ---
+        <p>@2018 - Designed and developed with 💙 by Alfredo Barron</p>
+
+        </article>
+      </section>
+    </main>
+</body>
+<script src="/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script>
+  new Typed(".subtitle span", {
+    strings: ["Tutorials"],
+    typeSpeed: 40
+  });
+  function sidebarToggle() {
+    var element = document.getElementById("app");
+    element.classList.toggle("close");
+  }
+</script>
+</html>
