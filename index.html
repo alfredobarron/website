@@ -24,6 +24,7 @@
     <aside class="sidebar">
       <div class="sidebar-nav">
         <ul>
+          <li><i class="fas fa-folder"></i> alfredobarron</li>
           <li class="active"><a href="index.html"><i class="fas fa-file"></i> index.hmtl</a></li>
           <li><a href="tutorials.html"><i class="fas fa-file"></i> tutorials.html</a></li>
           <li><a href="open_source.html"><i class="fas fa-file"></i> open_source.html</a></li>
@@ -55,42 +56,43 @@
 |_____/ /_/   |_| |_|  \_\ |_|  \_\ \_____/ |_|  \_| </code></pre>
 
 
-        <h3 class="subtitle"><span></span></h3>
+        <h5 class="title"><span></span></h5>
+        <pre><code class="i_like"></code></pre>
+        <hr id="i_like_hr" class="hide"><br>
 
-        <pre class="line-numbers"><code class="language-javascript">🎮 Programmer
-🖤 Open Source coder
-✍️ Tuturials writer
-🏍️ Motos, 🎧 Musica & 🏀 Basketball
-
-"The code is a universal language that break frontiers of communication."</code></pre>
-
-        <a href="https://sourcerer.io/alfredobarron" target="_blank"><img src="https://sourcerer.io/icons/logo-sharing.svg" height="24px" alt="Sourcerer"></a>
-        <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/JavaScript-512%20commits-orange.svg" alt=""></a>
-        <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/PHP-255%20commits-orange.svg" alt=""></a>
-        <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/PHP-255%20commits-orange.svg" alt=""></a>
-        <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/CSS-425%20commits-orange.svg" alt=""></a>
-        <br><br>
-
-        <h4>Awards</h4>
-        <p class="tip"><i class="fas fa-trophy"></i> <strong><a href="http://git-awards.com/users?utf8=%E2%9C%93&type=country&language=javascript&country=Mexico" target="_blank">Top Javascript GitHub developers in Mexico</a></p>
+        <h5 id="sourcerer_title"><span></span></h5>
+        <div id="sourcerer_content" class="hide">
+          <a href="https://sourcerer.io/alfredobarron" target="_blank"><img src="https://sourcerer.io/icons/logo-sharing.svg" height="24px" alt="Sourcerer"></a>
+          <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/JavaScript-512%20commits-orange.svg" alt=""></a>
+          <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/PHP-255%20commits-orange.svg" alt=""></a>
+          <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/HTML-340%20commits-orange.svg" alt=""></a> <a href="https://sourcerer.io/alfredobarron"><img src="https://img.shields.io/badge/CSS-425%20commits-orange.svg" alt=""></a>
+        </div>
         <br>
 
-        <h4>Speaking</h4>
-        <p class="tip"><strong><a href="https://www.meetup.com/es-ES/Javascript-Monterrey/events/230909962/" target="_blank">Talk about "The Power of Open Source"</a><br>Javascript Mty</strong></p>
+        <h5 class="awards_title"><span></span></h5>
+        <a id="awards_content" class="awards hide" href="http://git-awards.com/users?utf8=%E2%9C%93&type=country&language=javascript&country=Mexico" target="_blank"><pre class="line-numbers"><code class="language-javascript i_like"><i class="fas fa-trophy"></i>Top Javascript GitHub developers in Mexico</code></pre></a>
         <br>
 
-        <h4>Social</h4>
-        <a href="https://github.com/alfredobarron" target="_blank"><pre><i class="fab fa-github"></i><code class="lang-markdown"> GitHub</code></pre></a>
-        <a href="https://medium.com/@alfredobarron" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-markdown"> Medium</code></pre></a>
-        <a href="https://twitter.com/AlfredoBarronC" target="_blank"><pre><i class="fab fa-twitter"></i><code class="lang-markdown"> Twitter</code></pre></a>
-        <a href="https://mx.linkedin.com/in/alfredobarron" target="_blank"><pre><i class="fab fa-linkedin"></i><code class="lang-markdown"> Linkedin</code></pre></a>
+        <h5 id="speaking_title"><span></span></h5>
+        <a id="speaking_content" class="hide" href="https://www.meetup.com/es-ES/Javascript-Monterrey/events/230909962/" target="_blank">
+          <pre class="line-numbers"><code class="language-javascript"><strong>"The Power of Open Source"</strong>
+  Javascript Mty</code></pre>
+        </a>
+        <br>
+
+        <h5 id="social_title"><span></span></h5>
+        <div id="social_content" class="hide">
+          <a href="https://github.com/alfredobarron" target="_blank"><pre><i class="fab fa-github"></i><code class="lang-markdown"> GitHub</code></pre></a>
+          <a href="https://medium.com/@alfredobarron" target="_blank"><pre><i class="fab fa-medium"></i><code class="lang-markdown"> Medium</code></pre></a>
+          <a href="https://twitter.com/AlfredoBarronC" target="_blank"><pre><i class="fab fa-twitter"></i><code class="lang-markdown"> Twitter</code></pre></a>
+          <a href="https://mx.linkedin.com/in/alfredobarron" target="_blank"><pre><i class="fab fa-linkedin"></i><code class="lang-markdown"> Linkedin</code></pre></a>
+        </div>
 
         <br><br><br>
-        <details>
+        <details id="contact" class="hide">
           <summary>Contact me (Click to expand)</summary>
-          <ul>
-            <li><a href="mailto:alfredo@modulr.io">alfredo@modulr.io</a></li>
-          </ul>
+          <br>
+          <a href="mailto:alfredo@modulr.io">alfredo@modulr.io</a>
         </details>
         <br><br><br><br><br>
 
@@ -104,9 +106,59 @@
 <script src="prism.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 <script>
-  new Typed(".subtitle span", {
+  var title = new Typed(".title span", {
     strings: ["Software Architect"],
-    typeSpeed: 40
+    typeSpeed: 10,
+    showCursor: false
+  });
+
+  new Typed(".i_like", {
+    strings: [`^200🖤 Open Source coder
+✍️ Tuturials writer
+🏍️ Motos, Viajes y 🎧 Musica`],
+    typeSpeed: 1,
+    showCursor: false,
+    onComplete: (self) => {
+      new Typed("#sourcerer_title span", {
+        strings: ["Sourcerer profile"],
+        typeSpeed: 5,
+        onComplete: (self) => {
+          var element = document.getElementById("i_like_hr");
+          element.classList.add("show");
+          var element2 = document.getElementById("sourcerer_content");
+          element2.classList.add("show");
+
+          new Typed(".awards_title span", {
+            strings: ["Awards"],
+            typeSpeed: 10,
+            onComplete: () => {
+              var element = document.getElementById("awards_content");
+              element.classList.add("show");
+            }
+          });
+
+          new Typed("#speaking_title span", {
+            strings: ["^300 Speaking"],
+            typeSpeed: 10,
+            onComplete: () => {
+              var element = document.getElementById("speaking_content");
+              element.classList.add("show");
+            }
+          });
+
+          new Typed("#social_title span", {
+            strings: ["^600 Social"],
+            typeSpeed: 10,
+            onComplete: () => {
+              var element = document.getElementById("social_content");
+              element.classList.add("show");
+              var element2 = document.getElementById("contact");
+              element2.classList.add("show");
+            }
+          });
+        }
+      });
+    }
   });
 
   function sidebarToggle() {

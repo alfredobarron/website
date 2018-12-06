@@ -108,7 +108,7 @@ li input[type='checkbox'] {
   margin: 0;
 }
 .app-nav > a {
-  padding: 10px 85px;
+  padding: 10px 45px;
   margin:0;
   margin-right: -5px;
   /* margin: 0 1rem; */
@@ -350,7 +350,7 @@ body.sticky .sidebar-toggle {
 }
 .markdown-section hr {
   border: none;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #545454;
   margin: 2em 0;
 }
 .markdown-section iframe {
@@ -649,7 +649,10 @@ body {
   color: #c8c8c8;
 }
 .sidebar li {
-  margin: 6px 15px 6px 0;
+  margin: 5px 10px 5px 20px;
+}
+.sidebar ul li:first-child {
+  margin: 20px 10px 10px 0 !important;
 }
 .sidebar ul li a {
   color: #c8c8c8;
@@ -696,7 +699,7 @@ body {
 }
 .markdown-section h2 {
   font-size: 1.75rem;
-  margin: 25px 0 0.8rem;
+  margin: 0 0 3rem;
 }
 .markdown-section h3 {
   font-family: 'Press Start 2P', cursive;
@@ -890,4 +893,11 @@ input[type='search'] {
   background: #4f4f4f;
   border-color: #4f4f4f;
   color: #c8c8c8;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }
