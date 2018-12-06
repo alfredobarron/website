@@ -90,7 +90,7 @@ li input[type='checkbox'] {
 }
 .app-nav {
   padding: 11px 0 10px 0;
-  margin: -60px -15px 25px -15px !important;
+  margin: -60px 0 25px 0 !important;
   background-color: #333131;
   /* margin: 25px 60px 0 0; */
   position: fixed;
