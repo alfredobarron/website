@@ -500,8 +500,8 @@ body.close .app-nav  {
             transform: translateX(300px);
   }
   body.close .app-nav {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: translateX(-38px);
+            transform: translateX(-38px);
   }
 
   body.close .github-corner {
