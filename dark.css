@@ -419,10 +419,14 @@ body.close .sidebar {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }
+body.close .app-nav {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
 body.close .sidebar-toggle {
   width: auto;
 }
-body.close .content {
+body.close .content, body.close .app-nav  {
   left: 0;
 }
 @media print {
@@ -906,4 +910,8 @@ input[type='search'] {
 }
 .show {
   display: block;
+}
+
+#tutorials_content, #open_source_content {
+  margin-left: 30px
 }
