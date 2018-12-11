@@ -99,7 +99,9 @@ li input[type='checkbox'] {
   right: 0;
   /*text-align: right; */
   z-index: 10;
-/* navbar dropdown */
+  /* navbar dropdown */
+  -webkit-transition: left 250ms ease;
+  transition: left 250ms ease;
 }
 .app-nav.no-badge {
   margin-right: 25px;
@@ -419,15 +421,14 @@ body.close .sidebar {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }
-body.close .app-nav {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-}
 body.close .sidebar-toggle {
   width: auto;
 }
-body.close .content, body.close .app-nav  {
+body.close .content {
   left: 0;
+}
+body.close .app-nav  {
+  left: 38px;
 }
 @media print {
   .github-corner,
@@ -444,7 +445,7 @@ body.close .content, body.close .app-nav  {
     position: fixed;
   }
   .app-nav {
-    display: none;
+    left: 0;
   }
   .app-nav li ul {
     top: 30px;
@@ -498,7 +499,11 @@ body.close .content, body.close .app-nav  {
     -webkit-transform: translateX(300px);
             transform: translateX(300px);
   }
-  body.close .app-nav,
+  body.close .app-nav {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+
   body.close .github-corner {
     display: none;
   }
