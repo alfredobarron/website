@@ -917,6 +917,6 @@ input[type='search'] {
   display: block;
 }
 
-#tutorials_content, #open_source_content {
+#tutorials_content, #open_source_content, .ml-1 {
   margin-left: 30px
 }
