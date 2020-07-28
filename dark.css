@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Sans+Pro:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
 * {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
@@ -225,7 +225,7 @@ main.hidden {
   text-decoration: underline;
 }
 .text-xs {
-  font-size: 11px;
+  font-size: 10px;
 }
 .sidebar {
   border-right: 1px solid rgba(0,0,0,0.07);
@@ -339,8 +339,8 @@ body.sticky .sidebar-toggle {
   max-width: 800px;
   padding: 0 15px 40px 15px;
   position: relative;
-  /*height: 100%;
-  overflow: scroll; */
+  height: 100%;
+  overflow: scroll;
 }
 .markdown-section > * {
   -webkit-box-sizing: border-box;
@@ -449,6 +449,10 @@ body.close .app-nav  {
   }
   .app-nav li ul {
     top: 30px;
+  }
+
+  .markdown-section {
+    padding-top: 20px;
   }
   main {
     height: auto;
@@ -711,8 +715,6 @@ body {
   margin: 0 0 3rem;
 }
 .markdown-section h3 {
-  font-family: 'Press Start 2P', cursive;
-  color: var(--theme-color, #657b83);
   font-size: 1.5rem;
   margin: 0 0 2rem;
 }
@@ -917,6 +919,39 @@ input[type='search'] {
   display: block;
 }
 
-#tutorials_content, #open_source_content, .ml-1 {
-  margin-left: 30px
+.ml-1 {
+  margin-left: 20px !important;
+}
+
+.ml-2 {
+  margin-left: 40px !important;
+}
+
+p {
+  margin: .5em !important;
+}
+
+pre {
+  margin: 0;
+}
+
+pre.line-numbers {
+  line-height: 0;
+  counter-reset: line;
+  margin-top: 30px;
+}
+
+pre.line-numbers span div {
+  line-height: 2rem;
+}
+
+pre.line-numbers div:before {
+  width: 25px;
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  border-right: 1px solid #888;
+  padding: 0 .5em;
+  margin-right: 1em;
+  color: #888
 }
