@@ -225,7 +225,7 @@ main.hidden {
   text-decoration: underline;
 }
 .text-xs {
-  font-size: 10px;
+  font-size: 9px;
 }
 .sidebar {
   border-right: 1px solid rgba(0,0,0,0.07);
