@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'Press_Start_2P';
+    src:  url('../fonts/Press_Start_2P/PressStart2P-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source_Code_Pro';
+    src:  url('../fonts/Source_Code_Pro/static/SourceCodePro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Source_Code_Pro';
+    src:  url('../fonts/Source_Code_Pro/static/SourceCodePro-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+
+
+body {
+    font-family: 'Source_Code_Pro', monospace;
+}
+
+.font-start {
+    font-family: 'Press_Start_2P', cursive;
+}
+
+.text-2xs {
+    font-size: 0.60rem; /* 12px */
+    line-height: 0.75rem; /* 16px */
+}
+
