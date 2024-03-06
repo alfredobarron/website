@@ -711,6 +711,14 @@ video {
   height: 18rem;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
+.h-52 {
+  height: 13rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -1444,6 +1452,18 @@ body {
 
   .md\:h-24 {
     height: 6rem;
+  }
+
+  .md\:h-64 {
+    height: 16rem;
+  }
+
+  .md\:h-60 {
+    height: 15rem;
+  }
+
+  .md\:h-56 {
+    height: 14rem;
   }
 
   .md\:w-24 {
