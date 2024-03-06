@@ -33,3 +33,8 @@ body {
     line-height: 0.75rem; /* 16px */
 }
 
+.invisible-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
