@@ -33,6 +33,13 @@ body {
     line-height: 0.75rem; /* 16px */
 }
 
+.bg-ab {
+    background-image: url('/img/ab.png');
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .invisible-scrollbar::-webkit-scrollbar {
     display: none;
 }
