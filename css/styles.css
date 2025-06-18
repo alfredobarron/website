@@ -43,5 +43,13 @@ body {
 .invisible-scrollbar::-webkit-scrollbar {
     display: none;
 }
+/* styles/globals.css o cualquier archivo que importes */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
 
