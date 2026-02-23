@@ -2,6 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .card-glass {
+        @apply relative overflow-hidden rounded-2xl border border-white/[0.08] bg-black/30 backdrop-blur-md;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(16, 185, 129, 0.1) 100%);
+        box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2), 0 0 40px -10px rgba(16, 185, 129, 0.05);
+    }
+
+    .card-glass::before {
+        content: '';
+        @apply absolute inset-0 pointer-events-none opacity-20 transition-opacity duration-500;
+        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.05) 100%);
+    }
+
+    .card-glass::after {
+        content: '';
+        @apply absolute top-0 left-0 w-full h-[1px] pointer-events-none;
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+    }
+
+    .card-glass:hover {
+        @apply -translate-y-1 border-green-400/30;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(16, 185, 129, 0.18) 100%);
+        box-shadow: 0 8px 32px -2px rgba(0, 0, 0, 0.3), 0 0 60px -15px rgba(16, 185, 129, 0.2);
+    }
+
+    .card-glass:hover::before {
+        @apply opacity-30;
+    }
+
+    .card-glass-solid {
+        @apply relative overflow-hidden rounded-2xl border border-white/[0.08] bg-zinc-900/60 backdrop-blur-md;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(16, 185, 129, 0.08) 100%);
+        box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-glass-solid::before {
+        content: '';
+        @apply absolute inset-0 pointer-events-none;
+        background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%, rgba(255,255,255,0.03) 100%);
+    }
+
+    .card-glass-solid::after {
+        content: '';
+        @apply absolute top-0 left-0 w-full h-[1px] pointer-events-none;
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+    }
+
+    .card-glass-solid:hover {
+        @apply -translate-y-1 border-green-400/30 bg-zinc-800/80;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(16, 185, 129, 0.15) 100%);
+        box-shadow: 0 8px 32px -2px rgba(0, 0, 0, 0.3), 0 0 40px -10px rgba(16, 185, 129, 0.15);
+    }
+
+    .marquee {
+        overflow: hidden;
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .marquee::before,
+    .marquee::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 60px;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .marquee::before {
+        left: 0;
+        background: linear-gradient(to right, rgb(0, 0, 0), transparent);
+    }
+
+    .marquee::after {
+        right: 0;
+        background: linear-gradient(to left, rgb(0, 0, 0), transparent);
+    }
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 28s linear infinite;
+    }
+
+    .marquee-track > * {
+        flex-shrink: 0;
+    }
+
+    .marquee-track:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+}
+
 
 @font-face {
     font-family: 'Press_Start_2P';
