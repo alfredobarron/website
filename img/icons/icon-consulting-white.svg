@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="45 45 760 760"><g id="ICONS" fill="none" stroke="#fff" stroke-width="8.5" stroke-linejoin="round">
+<path d="M345,126V78H595V258H564" stroke-dasharray="14 12"/>
+<rect x="290" y="130" width="270" height="190" rx="12"/>
+<line x1="290" y1="172" x2="560" y2="172"/>
+<circle cx="318" cy="151" r="9"/>
+<circle cx="348" cy="151" r="9"/>
+<line x1="330" y1="215" x2="520" y2="215"/>
+<line x1="330" y1="248" x2="470" y2="248"/>
+<line x1="330" y1="281" x2="500" y2="281"/>
+<line x1="425" y1="320" x2="425" y2="440"/>
+<line x1="160" y1="440" x2="690" y2="440"/>
+<line x1="160" y1="440" x2="160" y2="520"/>
+<line x1="690" y1="440" x2="690" y2="520"/>
+<line x1="425" y1="440" x2="425" y2="520" stroke-dasharray="14 12"/>
+<rect x="70" y="520" width="180" height="140" rx="12"/>
+<line x1="100" y1="565" x2="220" y2="565"/>
+<line x1="100" y1="598" x2="190" y2="598"/>
+<line x1="100" y1="631" x2="205" y2="631"/>
+<rect x="600" y="520" width="180" height="140" rx="12"/>
+<line x1="600" y1="566" x2="780" y2="566"/>
+<line x1="600" y1="612" x2="780" y2="612"/>
+<circle cx="740" cy="543" r="7"/>
+<circle cx="740" cy="589" r="7"/>
+<circle cx="740" cy="636" r="7"/>
+<line x1="70" y1="720" x2="780" y2="720" stroke-dasharray="14 12"/>
+</g>
+<g fill="#22c55e">
+<path d="M345,548c0-18,36-30,80-30s80,12,80,30v116c0,18-36,30-80,30s-80-12-80-30Z"/>
+</g>
+<g fill="none" stroke="#000" stroke-width="8.5">
+<path d="M345,548c0,18,36,30,80,30s80-12,80-30"/>
+</g>
+</svg>
