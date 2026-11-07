@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll): no publicar notas internas ni archivos de desarrollo.
+exclude:
+  - docs
+  - README.md
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - node_modules
