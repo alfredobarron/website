@@ -1,4 +1,4 @@
-// Imágenes para los perfiles externos (LinkedIn, GitHub, GitLab, Medium) y el
+// Imágenes para los perfiles externos (LinkedIn, GitHub, GitLab, Medium, ChatGPT) y el
 // Perfil de Empresa de Google, en docs/marca/redes/. No se publican con el
 // sitio: se suben a mano a cada perfil (docs/MARKETING.md §4).
 // Uso: cd herramientas && node redes.js
@@ -55,6 +55,18 @@ h1 { align-self: center; font-size: 76px; max-width: 900px; }
 ${logo}<h1>Software a la medida, apps móviles y sitios web</h1>
 <div class="fila"><span class="apoyo">Monterrey, Nuevo León · alfredobarron.com</span>${tramo}</div>`
 
+// Portada del perfil en ChatGPT Business (1200 × 400). Sin foto encima: el
+// contenido va centrado en vertical y con margen por si recorta los bordes.
+const chatgpt = `${base}<style>
+body { width: 1200px; height: 400px; padding: 52px 88px; display: grid; grid-template-rows: auto 1fr auto; }
+.logo { font-size: 21px; }
+h1 { align-self: center; font-size: 52px; max-width: 800px; }
+.fila { display: flex; justify-content: space-between; align-items: center; font-size: 21px; }
+.tramo { font-size: 17px; }
+</style>
+${logo}<h1>Software a la medida que lleva tu negocio de A a B</h1>
+<div class="fila"><span class="apoyo">Sistemas web, apps móviles y sitios web · alfredobarron.com</span>${tramo}</div>`
+
 // Fotos del perfil de Google y publicaciones (4:3): una por servicio.
 const servicio = s => `${base}<style>
 body { width: 1200px; height: 900px; padding: 80px; display: grid; grid-template-rows: auto 1fr auto; }
@@ -69,6 +81,7 @@ ${logo}<h1>${s.nombre}</h1>
 const laminas = [
     ['linkedin-portada-1584x396', 1584, 396, linkedin],
     ['google-perfil-portada-1280x720', 1280, 720, google],
+    ['chatgpt-portada-1200x400', 1200, 400, chatgpt],
     ...es.servicios.map(s => [`google-perfil-foto-${s.clave}-1200x900`, 1200, 900, servicio(s)]),
 ]
 

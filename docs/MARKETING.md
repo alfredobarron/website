@@ -89,8 +89,9 @@ foto tuya de frente, con fondo liso, que además hace falta para «Sobre mí»).
 |---|---|
 | `linkedin-portada-1584x396.png` | Portada de LinkedIn (el texto va a la derecha porque la foto tapa la esquina izquierda) |
 | `foto-perfil-400.jpg` | Foto de perfil de LinkedIn |
-| `logo-cuadrado-800.png` | Avatar de GitHub, GitLab y Medium, y logotipo del Perfil de Empresa de Google |
+| `logo-cuadrado-800.png` | Avatar de GitHub, GitLab y Medium, y logotipo del Perfil de Empresa de Google y de ChatGPT Business |
 | `google-perfil-portada-1280x720.png` | Foto de portada del Perfil de Empresa de Google |
+| `chatgpt-portada-1200x400.png` | Portada del perfil en ChatGPT Business (el logo es `logo-cuadrado-800.png`) |
 | `google-perfil-foto-{software,apps,web,consultoria}-1200x900.png` | Fotos y publicaciones del Perfil de Empresa, una por servicio |
 
 
@@ -125,8 +126,8 @@ fechas; en Destacados, el sitio y los casos de Tráeme y Privada; sitio web `htt
 > Arquitecto de software en Monterrey. Software a la medida, apps móviles y sitios web. Fundador
 > de Tráeme y creador de Privada. alfredobarron.com
 
-GitHub, además: crear el repo `alfredobarron/alfredobarron` con un README de perfil (quién eres,
-qué construyes, liga al sitio y a los casos) y fijar `smoke`, `laravel-scaffold` y `website`.
+GitHub, además: el README de perfil vive en el repo `alfredobarron/alfredobarron` (quién eres,
+qué construyes, liga al sitio y a los casos); fijar `smoke`, `laravel-scaffold` y `website`.
 
 **Firma de correo**
 
