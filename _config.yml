@@ -1,8 +1,6 @@
 # GitHub Pages (Jekyll): no publicar notas internas ni archivos de desarrollo.
+# El sitio se genera con herramientas/construir.js y se commitea ya construido.
 exclude:
   - docs
+  - herramientas
   - README.md
-  - package.json
-  - package-lock.json
-  - tailwind.config.js
-  - node_modules

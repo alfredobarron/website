@@ -1,0 +1,21 @@
+{
+    "name": "Alfredo Barrón",
+    "short_name": "Alfredo Barrón",
+    "description": "Software a la medida, apps móviles y sitios web. Monterrey, México.",
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#F2F4F0",
+    "theme_color": "#0E3B2E",
+    "icons": [
+        {
+            "src": "/img/marca/icono-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/marca/icono-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

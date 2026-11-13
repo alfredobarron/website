@@ -1,0 +1,51 @@
+# Alfredo Barrón
+
+> Alfredo Barrón es arquitecto de software y desarrollador full stack en Monterrey, Nuevo León, México. Diseña, construye y opera software a la medida, apps móviles para iOS y Android y sitios web para empresas de todo México y Estados Unidos, con más de 15 años de experiencia. Es fundador de Tráeme (app de entregas a domicilio) y creador de Privada (software para fraccionamientos).
+
+## Servicios
+
+- [Desarrollo de software a la medida](https://alfredobarron.com/desarrollo-de-software-a-la-medida/): El software a la medida es un sistema construido para la forma exacta en que trabaja tu empresa, en lugar de adaptar tu operación a un programa genérico. Lo diseño, lo construyo y lo dejo funcionando en la nube.
+- [Desarrollo de apps móviles](https://alfredobarron.com/desarrollo-de-apps-moviles/): Desarrollo aplicaciones para iPhone y Android con React Native, una tecnología que permite construir las dos con un solo código. Eso reduce el costo de hacerlas y de mantenerlas, y las dos se publican al mismo tiempo en App Store y Google Play.
+- [Diseño de páginas web](https://alfredobarron.com/diseno-de-paginas-web/): Diseño y desarrollo sitios web que cargan rápido, se leen bien en el teléfono y explican con claridad lo que hace tu negocio. Cada página lleva al visitante a un siguiente paso concreto: escribirte por WhatsApp, pedir una cotización o conocer tu producto.
+- [Consultoría de software](https://alfredobarron.com/consultoria-de-software/): Reviso tu proyecto de software, tu código o tu infraestructura y te digo con claridad qué está bien, qué es un riesgo y qué haría primero. Sirve antes de invertir en un desarrollo, cuando un proyecto se atoró o cuando tu sistema creció y empezó a fallar.
+
+## Proyectos
+
+- [Universidad Construrama](https://alfredobarron.com/proyectos/universidad-construrama/): Universidad Construrama es la plataforma de capacitación en línea de la red de distribuidores Construrama. Ahí se registran los alumnos, toman sus cursos y obtienen sus certificados. La desarrollé en 2018 y desde entonces la mantengo y la opero.
+- [Auto Vision](https://alfredobarron.com/proyectos/auto-vision/): Auto Vision reúne en un mismo sistema a muchas tiendas de autopartes usadas. Cada tienda guarda sus piezas con fotos, el auto al que le quedan y su lugar en la bodega; el cliente las busca por marca, modelo y año en un catálogo en línea, y la tienda las publica en MercadoLibre sin capturarlas dos veces. Desarrollo y opero el sistema desde 2018.
+- [Tráeme](https://alfredobarron.com/proyectos/traeme/): Tráeme es un servicio de entregas a domicilio que lleva comida, súper, farmacia y paquetes en Monterrey e Hidalgo del Parral. Lo fundé en 2019 y construí todo su sistema: una API y tres apps móviles, una para cada persona que participa en un pedido.
+- [Privada](https://alfredobarron.com/proyectos/privada/): Privada es un software mexicano para fraccionamientos, privadas y condominios. Une a los residentes, a la caseta y a la administración en un solo sistema: control de acceso con código QR, cobranza de cuotas con morosidad automática y bitácora de entradas y salidas con evidencia. Es un producto propio: lo diseñé y lo construí completo, incluido el equipo que abre la pluma.
+- [Reportr](https://alfredobarron.com/proyectos/reportr/): Reportr es una app para reportar desperfectos en edificios. El equipo que los detecta, por ejemplo el de limpieza, crea el reporte con fotos; el jefe de mantenimiento lo asigna a un técnico y todos siguen el avance hasta que queda resuelto. Diseñé y desarrollé la app y su servidor.
+
+## Cómo trabaja
+
+1. **Llamada.** Me cuentas cómo trabaja hoy tu negocio y a dónde quieres llegar. No tiene costo.
+2. **Propuesta.** Recibes el alcance por escrito, con precio fijo por etapas y fechas de entrega.
+3. **Construcción.** Avanzo por etapas y en cada una pruebas algo que ya funciona.
+4. **Lanzamiento.** Dejo el sistema en tus servidores, las apps en las tiendas y a tu equipo capacitado.
+5. **Operación.** Me quedo a cargo del mantenimiento, el monitoreo y las mejoras que pida tu negocio.
+
+## Preguntas frecuentes
+
+- **¿Cuánto cuesta desarrollar un software a la medida o una app?** Depende del alcance: cuántas pantallas, cuántos tipos de usuario y con qué otros sistemas se conecta. Después de una llamada sin costo te envío una cotización con precio fijo por etapas, para que conozcas el costo y las fechas antes de empezar.
+- **¿Cuánto tarda un proyecto?** Un sitio web suele tomar unas semanas. Un sistema a la medida o una app móvil, de dos a cuatro meses para la primera versión que tu equipo ya puede usar; después se sigue mejorando por etapas.
+- **¿Trabajas con empresas fuera de Monterrey?** Sí. Trabajo de forma remota con empresas de todo México y de Estados Unidos, y en persona en Monterrey y su área metropolitana cuando el proyecto lo requiere.
+- **¿Publicas la app en App Store y Google Play?** Sí. Me encargo de las cuentas de desarrollador, la ficha de la tienda, el aviso de privacidad, la revisión de Apple y de Google y las actualizaciones posteriores.
+- **¿Das soporte después del lanzamiento?** Sí. Ofrezco planes de mantenimiento mensual que cubren el hosting, el monitoreo, la corrección de errores y las funciones nuevas que vaya pidiendo tu negocio.
+- **¿Con qué tecnologías trabajas?** Laravel (PHP) en el servidor, Vue en los paneles web, React Native con Expo en las apps de iOS y Android, y Amazon Web Services para la infraestructura. También uso Python con FastAPI para APIs y servicios, y la inteligencia artificial me acompaña en todo el proceso de desarrollo. Son tecnologías con mucha comunidad, así que cualquier otro equipo puede continuar el proyecto.
+- **¿Trabajas solo o con un equipo?** Tú tratas siempre conmigo: soy quien diseña la solución y quien la programa. Cuando un proyecto lo necesita, sumo a especialistas de confianza y sigo siendo el responsable.
+
+## Datos clave
+
+- Ubicación: Monterrey, Nuevo León, México. Trabaja de forma remota con empresas de todo México y Estados Unidos, y en persona en el área metropolitana de Monterrey.
+- Idiomas: español e inglés.
+- Tecnologías: Laravel (PHP), Vue, React Native con Expo, Python con FastAPI y Amazon Web Services.
+- Forma de cotizar: precio fijo por etapas, después de una primera llamada sin costo.
+
+## Contacto
+
+- WhatsApp y teléfono: +52 81 1897 7886
+- Correo: alfredobarronc@gmail.com
+- Sitio: https://alfredobarron.com/ (español) y https://alfredobarron.com/en/ (inglés)
+- LinkedIn: https://www.linkedin.com/in/alfredobarron
+- GitHub: https://github.com/alfredobarron

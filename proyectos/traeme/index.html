@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tráeme, app de entregas a domicilio | Alfredo Barrón</title>
+    <meta name="description" content="Cómo construí Tráeme, la app de los mandados: tres apps para cliente, repartidor y operación sobre una sola API, con seguimiento en el mapa.">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <meta name="author" content="Alfredo Barrón">
+    <link rel="canonical" href="https://alfredobarron.com/proyectos/traeme/">
+    
+
+    <meta property="og:site_name" content="Alfredo Barrón">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Tráeme, la app de los mandados">
+    <meta property="og:description" content="Cómo construí Tráeme, la app de los mandados: tres apps para cliente, repartidor y operación sobre una sola API, con seguimiento en el mapa.">
+    <meta property="og:url" content="https://alfredobarron.com/proyectos/traeme/">
+    <meta property="og:image" content="https://alfredobarron.com/img/og/traeme.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Tráeme, la app de los mandados">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tráeme, la app de los mandados">
+    <meta name="twitter:description" content="Cómo construí Tráeme, la app de los mandados: tres apps para cliente, repartidor y operación sobre una sola API, con seguimiento en el mapa.">
+    <meta name="twitter:image" content="https://alfredobarron.com/img/og/traeme.png">
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/img/marca/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/marca/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#F2F4F0">
+
+    <link rel="preload" href="/fonts/Funnel/FunnelDisplay-Variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Funnel/FunnelSans-Variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="/css/sitio.css?v=20261113e" rel="stylesheet">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://alfredobarron.com/#sitio","url":"https://alfredobarron.com/","name":"Alfredo Barrón","inLanguage":["es-MX","en"],"publisher":{"@id":"https://alfredobarron.com/#negocio"}},{"@type":"ProfessionalService","@id":"https://alfredobarron.com/#negocio","name":"Alfredo Barrón, desarrollo de software","url":"https://alfredobarron.com/","logo":"https://alfredobarron.com/img/marca/logo-512.png","image":"https://alfredobarron.com/img/og/inicio-es.png","description":"Desarrollo de software a la medida, apps móviles para iOS y Android, sitios web y consultoría técnica para empresas, desde Monterrey para todo México y Estados Unidos.","telephone":"+528118977886","email":"alfredobarronc@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Monterrey","addressRegion":"Nuevo León","addressCountry":"MX"},"areaServed":[{"@type":"Country","name":"México"},{"@type":"Country","name":"United States"}],"knowsLanguage":["es","en"],"founder":{"@id":"https://alfredobarron.com/#persona"}},{"@type":"Person","@id":"https://alfredobarron.com/#persona","name":"Alfredo Barrón","jobTitle":"Arquitecto de software","url":"https://alfredobarron.com/","image":"https://alfredobarron.com/img/marca/alfredo-barron.webp","worksFor":{"@id":"https://alfredobarron.com/#negocio"},"address":{"@type":"PostalAddress","addressLocality":"Monterrey","addressRegion":"Nuevo León","addressCountry":"MX"},"knowsAbout":["Laravel","Vue.js","React Native","Expo","Python","Amazon Web Services","Inteligencia artificial","Arquitectura de software"],"sameAs":["https://github.com/alfredobarron","https://gitlab.com/alfredobarron","https://www.linkedin.com/in/alfredobarron","https://alfredobarron.medium.com/","https://www.google.com/maps?cid=16262215527281852045"]},{"@type":"CreativeWork","@id":"https://alfredobarron.com/proyectos/traeme/#proyecto","name":"Tráeme","headline":"Tráeme, la app de los mandados","description":"Cómo construí Tráeme, la app de los mandados: tres apps para cliente, repartidor y operación sobre una sola API, con seguimiento en el mapa.","url":"https://alfredobarron.com/proyectos/traeme/","image":"https://alfredobarron.com/img/og/traeme.png","inLanguage":"es-MX","creator":{"@id":"https://alfredobarron.com/#persona"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://alfredobarron.com/"},{"@type":"ListItem","position":2,"name":"Proyectos","item":"https://alfredobarron.com/#proyectos"},{"@type":"ListItem","position":3,"name":"Tráeme","item":"https://alfredobarron.com/proyectos/traeme/"}]}]}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H03GCQWQ13"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-H03GCQWQ13')</script>
+</head>
+<body>
+    <a class="ab-saltar" href="#contenido">Ir al contenido</a>
+    <header class="ab-cabeza">
+        <div class="ab-ancho ab-cabeza__fila">
+            <a class="ab-logo" href="/" aria-label="Alfredo Barrón, inicio"><svg viewBox="0 0 932 728" aria-hidden="true"><path d="M 206.5 1 C 67.4 15 -26.3 146.7 6.6 281.9 C 41.1 423.1 199.8 496.1 330.4 430.8 C 341.2 425.4 357 415.9 358.9 413.7 C 359.7 412.6 360 398.6 359.8 360.6 L 359.5 309 354.1 317.2 C 325.1 361.4 263.8 388.3 208.5 381.1 C 130.8 371 73.7 306.3 73.6 228 C 73.3 89.5 239.7 20.9 338.1 119 C 356.7 137.5 367.9 155.5 376 179.9 C 383.7 202.7 383.3 196.2 383.9 315.5 L 384.5 422.5 387.4 427.4 C 396.2 442.4 421.4 455.3 452.1 460.4 L 455.7 461 455.4 363.3 C 454.7 198.6 454.7 198.1 447.1 169 C 419.5 62.8 315.4 -9.9 206.5 1 M 476.1 260.2 C 476.5 506.1 477.2 530.1 484.5 558.6 C 521.8 704.4 692.1 773.1 822 694.8 C 946.1 620 968.9 448.2 868.7 343.3 C 793.7 264.8 671.9 250.2 581 308.7 L 572 314.5 572.1 367 C 572.1 408 572.4 419.1 573.3 417.6 C 629.3 329.4 755 320.7 821.9 400.3 C 897.9 490.9 850.3 626.8 733.6 652.2 C 718.9 655.4 688.1 655.4 673.4 652.2 C 610.6 638.6 564 591.8 550.8 529.3 L 548.5 518.5 548 377.5 L 547.5 236.5 545.2 232.2 C 537.3 217.5 514.5 203.7 485.7 196.5 C 482.3 195.6 478.7 194.7 477.8 194.4 C 476.1 193.9 476 197.5 476.1 260.2" fill-rule="evenodd"/></svg><span>Alfredo Barrón</span></a>
+            <nav class="ab-nav" aria-label="Principal">
+                <a href="/#servicios">Servicios</a><a href="/#proyectos">Proyectos</a><a href="/#como-trabajo">Cómo trabajo</a><a href="/#sobre-mi">Sobre mí</a>
+                <a class="ab-idioma" href="/en/" hreflang="en" lang="en">English</a>
+                <a class="ab-boton ab-boton--chico" href="https://wa.me/528118977886?text=Hola%20Alfredo%2C%20quiero%20cotizar%20un%20proyecto." data-evento="whatsapp">Cotizar por WhatsApp</a>
+            </nav>
+            <details class="ab-menu">
+                <summary>Menú</summary>
+                <div class="ab-menu__lista">
+                    <a href="/#servicios">Servicios</a><a href="/#proyectos">Proyectos</a><a href="/#como-trabajo">Cómo trabajo</a><a href="/#sobre-mi">Sobre mí</a>
+                    <a href="/en/" hreflang="en" lang="en">English</a>
+                    <a class="ab-boton" href="https://wa.me/528118977886?text=Hola%20Alfredo%2C%20quiero%20cotizar%20un%20proyecto." data-evento="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24ZM8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.29-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43l-.47-.01Z"/></svg>Cotizar por WhatsApp</a>
+                </div>
+            </details>
+        </div>
+    </header>
+    <main id="contenido">
+        <section class="ab-portada ab-portada--interior">
+            <div class="ab-ancho">
+                <nav aria-label="Ruta"><ol class="ab-migas"><li><a href="/">Inicio</a></li><li><a href="/#proyectos">Proyectos</a></li><li aria-current="page">Tráeme</li></ol></nav>
+                <h1>Tráeme, la app de los mandados</h1>
+                <p class="ab-respuesta">Tráeme es un servicio de entregas a domicilio que lleva comida, súper, farmacia y paquetes en Monterrey e Hidalgo del Parral. Lo fundé en 2019 y construí todo su sistema: una API y tres apps móviles, una para cada persona que participa en un pedido.</p>
+            </div>
+        </section>
+        <section class="ab-seccion ab-seccion--pegada">
+            <div class="ab-ancho ab-antes-hoy">
+                <div class="ab-antes-hoy__a">
+                    <h3><span class="ab-letra ab-letra--a" aria-hidden="true">A</span>El punto de partida</h3>
+                    <ul><li>Los pedidos llegan por llamada y por mensaje.</li><li>El precio del envío se calcula de memoria.</li><li>Nadie sabe dónde va el repartidor hasta que llega.</li><li>La coordinación de los repartidores se hace a mano.</li></ul>
+                </div>
+                <div class="ab-antes-hoy__b">
+                    <h3><span class="ab-letra ab-letra--b" aria-hidden="true">B</span>Hoy</h3>
+                    <ul><li>El cliente pide desde su teléfono y ve el costo antes de confirmar.</li><li>El envío se cotiza según la distancia entre el punto A y el punto B.</li><li>El pedido se sigue en el mapa hasta la puerta.</li><li>La operación asigna, vigila los tiempos y recibe alertas desde su propia app.</li></ul>
+                </div>
+            </div>
+        </section>
+        <section class="ab-seccion ab-seccion--blanca">
+            <div class="ab-ancho ab-dos">
+                <h2>Ficha del proyecto</h2>
+                <dl class="ab-ficha"><div><dt>Tipo</dt><dd>Producto propio</dd></div><div><dt>Mi papel</dt><dd>Fundador. Arquitectura, diseño y desarrollo de todo el sistema</dd></div><div><dt>Desde</dt><dd>2019</dd></div><div><dt>Plataformas</dt><dd>iOS, Android y web</dd></div><div><dt>Tecnología</dt><dd>Laravel, React Native con Expo, MySQL y Amazon Web Services</dd></div><div><dt>Sitio</dt><dd><a href="https://traeme.app" rel="noopener">traeme.app</a></dd></div></dl>
+            </div>
+        </section>
+        <section class="ab-seccion">
+            <div class="ab-ancho ab-dos">
+                <h2>Lo que construí</h2>
+                <ul class="ab-lista"><li><h3>Una API para todo</h3><p>Un solo servidor atiende a las tres apps, con las reglas del negocio en un mismo lugar.</p></li><li><h3>App del cliente</h3><p>Para pedir, ver el costo del envío antes de confirmar y seguir al repartidor.</p></li><li><h3>App del repartidor</h3><p>Recibe los pedidos, navega del punto de recolección al de entrega y reporta cada paso.</p></li><li><h3>App de operación</h3><p>Para coordinar pedidos y repartidores, con alertas cuando un pedido se retrasa.</p></li><li><h3>Cotización del envío</h3><p>Calcula el precio por kilómetro y considera la espera en la tienda y el clima.</p></li><li><h3>Sitio web</h3><p>traeme.app, con la información del servicio para clientes, tiendas y repartidores.</p></li></ul>
+            </div>
+        </section>
+        <section class="ab-seccion ab-seccion--blanca">
+            <div class="ab-ancho">
+                <div class="ab-seccion__cabeza"><h2>Así se ve</h2><p>El sitio de Tráeme, en teléfono y en computadora.</p></div>
+                <div class="ab-galeria"><figure class="ab-galeria__ancha"><img src="/img/proyectos/traeme-web-escritorio.webp" alt="traeme.app en computadora" width="1280" height="960" loading="lazy"><figcaption>traeme.app en computadora</figcaption></figure><figure><img src="/img/proyectos/traeme-web-movil.webp" alt="traeme.app en un teléfono" width="600" height="1200" loading="lazy"><figcaption>traeme.app en un teléfono</figcaption></figure></div>
+            </div>
+        </section>
+<section id="contacto" class="ab-seccion">
+        <div class="ab-ancho">
+            <div class="ab-contacto">
+                <div>
+                    <h2>¿Tu negocio también mueve cosas de A a B?</h2>
+                    <p class="ab-contacto__bajada">Escríbeme qué necesitas y a dónde quieres llegar. La primera llamada no tiene costo y sales de ella con los siguientes pasos.</p>
+                    <div class="ab-contacto__acciones">
+                        <a class="ab-boton ab-boton--claro" href="https://wa.me/528118977886?text=Hola%20Alfredo%2C%20vi%20el%20caso%20de%20Tr%C3%A1eme%20y%20quiero%20platicar%20de%20un%20proyecto." data-evento="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24ZM8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.29-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43l-.47-.01Z"/></svg>Cotizar por WhatsApp</a>
+                        <a class="ab-boton ab-boton--linea" href="mailto:alfredobarronc@gmail.com" data-evento="correo">Escribir un correo</a>
+                    </div>
+                </div>
+                <ul class="ab-contacto__datos"><li><span>WhatsApp y teléfono</span><a href="https://wa.me/528118977886?text=Hola%20Alfredo%2C%20vi%20el%20caso%20de%20Tr%C3%A1eme%20y%20quiero%20platicar%20de%20un%20proyecto.">+52 81 1897 7886</a></li><li><span>Correo</span><a href="mailto:alfredobarronc@gmail.com">alfredobarronc@gmail.com</a></li><li><span>Ubicación</span><strong>Monterrey, Nuevo León, México</strong></li></ul>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer class="ab-pie">
+        <div class="ab-ancho">
+            <div class="ab-pie__fila">
+                <div class="ab-pie__marca">
+                    <a class="ab-logo" href="/"><svg viewBox="0 0 932 728" aria-hidden="true"><path d="M 206.5 1 C 67.4 15 -26.3 146.7 6.6 281.9 C 41.1 423.1 199.8 496.1 330.4 430.8 C 341.2 425.4 357 415.9 358.9 413.7 C 359.7 412.6 360 398.6 359.8 360.6 L 359.5 309 354.1 317.2 C 325.1 361.4 263.8 388.3 208.5 381.1 C 130.8 371 73.7 306.3 73.6 228 C 73.3 89.5 239.7 20.9 338.1 119 C 356.7 137.5 367.9 155.5 376 179.9 C 383.7 202.7 383.3 196.2 383.9 315.5 L 384.5 422.5 387.4 427.4 C 396.2 442.4 421.4 455.3 452.1 460.4 L 455.7 461 455.4 363.3 C 454.7 198.6 454.7 198.1 447.1 169 C 419.5 62.8 315.4 -9.9 206.5 1 M 476.1 260.2 C 476.5 506.1 477.2 530.1 484.5 558.6 C 521.8 704.4 692.1 773.1 822 694.8 C 946.1 620 968.9 448.2 868.7 343.3 C 793.7 264.8 671.9 250.2 581 308.7 L 572 314.5 572.1 367 C 572.1 408 572.4 419.1 573.3 417.6 C 629.3 329.4 755 320.7 821.9 400.3 C 897.9 490.9 850.3 626.8 733.6 652.2 C 718.9 655.4 688.1 655.4 673.4 652.2 C 610.6 638.6 564 591.8 550.8 529.3 L 548.5 518.5 548 377.5 L 547.5 236.5 545.2 232.2 C 537.3 217.5 514.5 203.7 485.7 196.5 C 482.3 195.6 478.7 194.7 477.8 194.4 C 476.1 193.9 476 197.5 476.1 260.2" fill-rule="evenodd"/></svg><span>Alfredo Barrón</span></a>
+                    <p>Software a la medida, apps móviles y sitios web. Monterrey, Nuevo León.</p>
+                </div>
+                <div><h2>Servicios</h2><ul><li><a href="/desarrollo-de-software-a-la-medida/">Software a la medida</a></li><li><a href="/desarrollo-de-apps-moviles/">Apps móviles</a></li><li><a href="/diseno-de-paginas-web/">Páginas web</a></li><li><a href="/consultoria-de-software/">Consultoría técnica</a></li></ul></div>
+                <div><h2>Proyectos</h2><ul><li><a href="/proyectos/universidad-construrama/">Universidad Construrama</a></li><li><a href="/proyectos/auto-vision/">Auto Vision</a></li><li><a href="/proyectos/traeme/">Tráeme</a></li><li><a href="/proyectos/privada/">Privada</a></li><li><a href="/proyectos/reportr/">Reportr</a></li></ul></div>
+                <div><h2>Contacto</h2><ul><li><a href="https://wa.me/528118977886?text=Hola%20Alfredo%2C%20quiero%20cotizar%20un%20proyecto.">WhatsApp</a></li><li><a href="mailto:alfredobarronc@gmail.com">alfredobarronc@gmail.com</a></li><li><a href="https://www.linkedin.com/in/alfredobarron" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/alfredobarron" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+            </div>
+            <div class="ab-pie__legal">
+                <p>© 2026 Alfredo Barrón. Todos los derechos reservados.</p>
+                <p>Hecho en Monterrey.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/sitio.js?v=20261113e" defer></script>
+</body>
+</html>
