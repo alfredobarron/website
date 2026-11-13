@@ -5,6 +5,8 @@ La historia del sitio: lo hecho y lo decidido, con su porqué. Lo abierto vive e
 
 ## 2026-11-13 · Marca v1 y sitio nuevo
 
+Publicado en `master` el 2026-11-13 (commit `e44491c`).
+
 Se rehízo el sitio completo sobre una marca nueva ([MARCA.md](MARCA.md)), con el método que se
 siguió en Privada: primero la idea y la identidad, después las páginas.
 

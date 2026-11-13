@@ -5,14 +5,10 @@
 > (DNS en GoDaddy, GitHub Pages, SES) está en `~/Dev/ops/OPERACION.md` §3. **Esta carpeta no se
 > publica**: `_config.yml` la excluye de GitHub Pages, igual que `herramientas/`.
 
-## Antes de publicar el sitio nuevo
+## Recién publicado (el sitio nuevo salió a `master` el 2026-11-13)
 
-- [ ] **Leer el sitio completo una vez** antes del push: los textos los redactó Claude el
-      2026-11-13 (viven en `herramientas/sitio/datos-es.js` y `datos-en.js`). Las promesas ya las
-      confirmó Alfredo.
-
-## Después de publicar
-
+- [ ] **Comprobar en producción** que <https://alfredobarron.com> ya sirve el sitio nuevo: las 12
+      páginas, el 404, `sitemap.xml`, `llms.txt` y el favicon (GitHub Pages tarda unos minutos).
 - [ ] **Probar la vista previa al compartir** (LinkedIn Post Inspector, Facebook Sharing Debugger,
       WhatsApp) y **validar los datos estructurados** (Rich Results Test) del inicio, un servicio y
       un caso. En Search Console, reenviar el sitemap y pedir la indexación de las páginas nuevas.
