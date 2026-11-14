@@ -225,7 +225,7 @@ const inicio = {
                 ['2025 a la fecha', 'Doble Dígito', 'Arquitecto de software', 'Diseño y desarrollo APIs y plataformas con Python y FastAPI.'],
                 ['2019 a la fecha', 'Tráeme', 'Fundador', 'Diseñé, desarrollé y puse en operación todas las piezas de una app de entregas a domicilio, y llevo su tecnología y su negocio.'],
                 ['2022 a 2024', 'Connectivity Solutions', 'Gerente de desarrollo', 'Dirigí el desarrollo de una plataforma que monitorea equipos de red en tiempo real, con Laravel, React y AWS.'],
-                ['2020 a 2022', 'Gericare', 'Líder de tecnología', 'Llevé la tecnología del grupo: sistema interno, aplicaciones de registro de cuidados, plataforma de clases en video y los sitios de varios negocios, sobre Laravel, Vue y AWS.'],
+                ['2020 a 2022', 'Gericare', 'Líder de tecnología', 'Llevé la tecnología del grupo: sus sistemas, aplicaciones y sitios web, con Laravel, Vue y AWS.'],
                 ['2013 a 2018', 'Vialux', 'Líder de desarrollo full stack', 'Desarrollé un ERP con presupuestos, compras, reportes y conexión con SAP, con Laravel, Angular y AWS.'],
                 ['2012 a 2013', 'Tecnológico de Monterrey', 'Desarrollador full stack sénior', 'Ayudé a llevar cursos universitarios a formatos web que se leen bien en teléfonos y tabletas.'],
             ],

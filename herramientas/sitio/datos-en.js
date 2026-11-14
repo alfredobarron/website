@@ -151,7 +151,7 @@ const inicio = {
                 ['2025 to date', 'Doble Dígito', 'Software Architect', 'I design and build APIs and platforms with Python and FastAPI.'],
                 ['2019 to date', 'Tráeme', 'Founder', 'Designed, built and launched every piece of a delivery app, and I run its technology and its business.'],
                 ['2022 to 2024', 'Connectivity Solutions', 'Development Manager', 'Led the development of a platform that monitors network devices in real time, with Laravel, React and AWS.'],
-                ['2020 to 2022', 'Gericare', 'Technology Lead', 'Ran technology for the group: the internal system, care-record apps, a video class platform and the websites of several of its businesses, on Laravel, Vue and AWS.'],
+                ['2020 to 2022', 'Gericare', 'Technology Lead', 'Ran technology for the group: its systems, apps and websites, with Laravel, Vue and AWS.'],
                 ['2013 to 2018', 'Vialux', 'Lead Full Stack Developer', 'Developed an ERP with budgeting, procurement, reporting and SAP connectivity, with Laravel, Angular and AWS.'],
                 ['2012 to 2013', 'Tecnológico de Monterrey', 'Senior Full Stack Developer', 'Helped turn university courses into web formats that read well on phones and tablets.'],
             ],
