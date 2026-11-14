@@ -228,6 +228,14 @@ function pie(idioma, columnas) {
     </footer>`
 }
 
+// Las ligas que salen del sitio (WhatsApp, sitios de clientes, perfiles) abren en otra pestaña,
+// para que quien las sigue no pierda la página desde la que iba a escribir.
+const fuera = html => html.replace(/<a\b([^>]*\bhref="https?:\/\/(?!alfredobarron\.com)[^"]*"[^>]*)>/g, (_, attrs) => {
+    if (!/\btarget=/.test(attrs)) attrs += ' target="_blank"'
+    if (!/\brel=/.test(attrs)) attrs += ' rel="noopener"'
+    return `<a${attrs}>`
+})
+
 // pagina.alternos = { 'es-MX': '/ruta/', en: '/en/ruta/' } (opcional)
 function documento(pagina) {
     const { idioma, ruta, titulo, descripcion, cuerpo, columnas } = pagina
@@ -281,11 +289,11 @@ function documento(pagina) {
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', '${ANALITICA}')</script>
 </head>
 <body>
-    ${cabeza(idioma, pagina.actual)}
+    ${fuera(cabeza(idioma, pagina.actual))}
     <main id="contenido">
-${cuerpo}
+${fuera(cuerpo)}
     </main>
-    ${pie(idioma, columnas)}
+    ${fuera(pie(idioma, columnas))}
     <script src="/js/sitio.js?v=${VERSION}" defer></script>
 </body>
 </html>
