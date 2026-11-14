@@ -55,6 +55,25 @@ siguió en Privada: primero la idea y la identidad, después las páginas.
 - **Regla de contenido**: de cada proyecto solo se publica lo que ya es público en su sitio o en
   las tiendas; nada de cifras internas ni nombres de clientes de Privada.
 
+## 2026-11-13 · Perfiles externos al día con la marca
+
+Con el sitio nuevo publicado, se actualizaron los perfiles con los textos y las imágenes de
+[MARKETING.md](MARKETING.md) §4, para que digan lo mismo que el sitio.
+
+- **GitHub**: nombre con acento, bio corta, empresa «Tráeme», sitio y `website` fijado junto a
+  `smoke` y `laravel-scaffold`. Se creó el repo `alfredobarron/alfredobarron` con el README de
+  perfil. Verificado por la API de GitHub; el avatar lo subió Alfredo.
+- **LinkedIn, GitLab, Medium, Perfil de Empresa de Google y ChatGPT Business**: los actualizó
+  Alfredo a mano (confirmado por él el 2026-11-13; no se revisaron desde fuera). En Google se
+  incluyen la información, las fotos y la petición de las primeras reseñas. Para ChatGPT Business
+  se generó una portada de 1200 × 400 (`chatgpt-portada-1200x400.png`).
+- **Trayectoria** (decisión de Alfredo, 2026-11-13): Gericare es «Líder de tecnología», Vialux
+  «Líder de desarrollo full stack» y el Tec de Monterrey «Desarrollador full stack sénior»; el
+  sitio y LinkedIn llevan los mismos cargos, años y descripciones. El proyecto de Mora Car Care
+  en Estados Unidos no va en la experiencia porque fue un cliente, no un empleo.
+- **Firma de correo**: el texto está en MARKETING.md §4; la versión en HTML sigue en
+  [PENDIENTES.md](PENDIENTES.md) («Aplicaciones de la marca»).
+
 ## 2026-11-06 a 2026-11-07
 
 - Se creó `docs/PENDIENTES.md` (movido desde `~/Dev/ops/PENDIENTES.md`) y se excluyó `docs/` de

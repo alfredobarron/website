@@ -12,12 +12,6 @@
 - [ ] **Probar la vista previa al compartir** (LinkedIn Post Inspector, Facebook Sharing Debugger,
       WhatsApp) y **validar los datos estructurados** (Rich Results Test) del inicio, un servicio y
       un caso. En Search Console, reenviar el sitemap y pedir la indexación de las páginas nuevas.
-- [ ] **Perfil de Empresa de Google** (ya existe y el sitio lo liga en `sameAs`): ponerlo al día
-      con los textos de [MARKETING.md](MARKETING.md) §4 y pedir las primeras reseñas (Mora Car
-      Care, Tamales Lolita, Universidad Construrama).
-- [ ] **Actualizar los perfiles externos** con el titular, la descripción y el avatar de
-      [MARKETING.md](MARKETING.md) §4: LinkedIn (titular, Acerca de, experiencia con fechas,
-      ubicación), GitHub (bio y README de perfil), GitLab, Medium y la firma de correo.
 - [ ] **Analítica**: ya está cargada (`G-H03GCQWQ13`). Falta, en Google Analytics, marcar el
       evento `contacto` como evento clave para que cuente como conversión, y comprobar en
       «Tiempo real» que llegan las visitas.

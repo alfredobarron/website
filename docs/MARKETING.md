@@ -21,7 +21,7 @@ estructurados, sitemap, Search Console desde el 2026-10-07), pero:
   inglés de 2020 a 2024.
 - Cargaba Font Awesome completo (cuatro hojas de estilo) y dos fuentes en TTF para una sola página.
 
-**Perfiles externos** (lo que se ve sin iniciar sesión):
+**Perfiles externos** (lo que se veía sin iniciar sesión antes del 2026-11-13):
 
 | Perfil | Qué dice hoy | Problema |
 |---|---|---|
@@ -30,6 +30,10 @@ estructurados, sitemap, Search Console desde el 2026-10-07), pero:
 | GitLab | «Software Architect, creator of modulr and smokejs…», liga al sitio | Bio en inglés y de otra época |
 | Medium | 10 artículos en inglés, el último del 2024-03-05 | Parado desde hace más de dos años; habla a programadores, no a clientes |
 | Google | Hay Perfil de Empresa (<https://www.google.com/maps?cid=16262215527281852045>; no se revisó su contenido) | Falta ponerlo al día con la marca y los servicios nuevos, y pedir reseñas |
+
+Esta tabla es el diagnóstico de antes del sitio nuevo. Los cinco perfiles se actualizaron el
+2026-11-13 con lo de §4 ([ROADMAP.md](ROADMAP.md)); siguen abiertos los forks y pruebas viejas de
+GitHub y los artículos parados de Medium.
 
 **Competencia en «desarrollo de software a la medida Monterrey»**: agencias y fábricas de software
 con páginas por ciudad y blog. Compiten con equipo y volumen; Alfredo compite con **productos
