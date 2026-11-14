@@ -5,17 +5,6 @@
 > (DNS en GoDaddy, GitHub Pages, SES) está en `~/Dev/ops/OPERACION.md` §3. **Esta carpeta no se
 > publica**: `_config.yml` la excluye de GitHub Pages, igual que `herramientas/`.
 
-## Recién publicado (el sitio nuevo salió a `master` el 2026-11-13)
-
-- [ ] **Comprobar en producción** que <https://alfredobarron.com> ya sirve el sitio nuevo: las 12
-      páginas, el 404, `sitemap.xml`, `llms.txt` y el favicon (GitHub Pages tarda unos minutos).
-- [ ] **Probar la vista previa al compartir** (LinkedIn Post Inspector, Facebook Sharing Debugger,
-      WhatsApp) y **validar los datos estructurados** (Rich Results Test) del inicio, un servicio y
-      un caso. En Search Console, reenviar el sitemap y pedir la indexación de las páginas nuevas.
-- [ ] **Analítica**: ya está cargada (`G-H03GCQWQ13`). Falta, en Google Analytics, marcar el
-      evento `contacto` como evento clave para que cuente como conversión, y comprobar en
-      «Tiempo real» que llegan las visitas.
-
 ## Para mejorar el sitio
 
 - [ ] **Foto nueva**: la actual (`herramientas/fuentes/alfredo-barron.jpg`) es de 2020 y mide

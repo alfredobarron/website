@@ -74,6 +74,22 @@ Con el sitio nuevo publicado, se actualizaron los perfiles con los textos y las 
 - **Firma de correo**: el texto está en MARKETING.md §4; la versión en HTML sigue en
   [PENDIENTES.md](PENDIENTES.md) («Aplicaciones de la marca»).
 
+## 2026-11-13 · Comprobaciones después de publicar
+
+- **Producción**: responden las 12 páginas, el 404 muestra su página propia y cargan
+  `sitemap.xml`, `llms.txt`, `robots.txt` y el favicon (revisado con `curl` contra
+  <https://alfredobarron.com>).
+- **Vista previa al compartir, datos estructurados y Search Console**: los hizo Alfredo
+  (Facebook Sharing Debugger, LinkedIn Post Inspector, WhatsApp, Rich Results Test, reenvío del
+  sitemap y petición de indexación). Facebook guardaba la imagen del sitio anterior
+  (`apple-icon-180x180.png`, «imagen demasiado pequeña»): se arregla con «Volver a extraer», no
+  en el código. El aviso de que falta `fb:app_id` se ignora: solo sirve para Facebook Insights.
+- **Analítica**: Alfredo marcó `contacto` como evento clave en Google Analytics y lo comprobó en
+  Tiempo real.
+- **Ligas externas en otra pestaña** (commit `30bd018`): la plantilla agrega
+  `target="_blank" rel="noopener"` a toda liga que sale del sitio (WhatsApp, sitios de clientes,
+  perfiles), porque en computadora `wa.me` reemplazaba la página con su pantalla intermedia.
+
 ## 2026-11-06 a 2026-11-07
 
 - Se creó `docs/PENDIENTES.md` (movido desde `~/Dev/ops/PENDIENTES.md`) y se excluyó `docs/` de
