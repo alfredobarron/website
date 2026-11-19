@@ -96,6 +96,7 @@ foto tuya de frente, con fondo liso, que además hace falta para «Sobre mí»).
 | `logo-cuadrado-800.png` | Avatar de GitHub, GitLab y Medium, y logotipo del Perfil de Empresa de Google y de ChatGPT Business |
 | `google-perfil-portada-1280x720.png` | Foto de portada del Perfil de Empresa de Google |
 | `chatgpt-portada-1200x400.png` | Portada del perfil en ChatGPT Business (el logo es `logo-cuadrado-800.png`) |
+| `google-play-encabezado-4096x2304.png` | Imagen del encabezado del perfil de desarrollador de Google Play (Play Console → Perfil del desarrollador de Play) |
 | `google-perfil-foto-{software,apps,web,consultoria}-1200x900.png` | Fotos y publicaciones del Perfil de Empresa, una por servicio |
 
 

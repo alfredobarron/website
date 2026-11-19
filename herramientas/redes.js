@@ -1,7 +1,8 @@
 // Imágenes para los perfiles externos (LinkedIn, GitHub, GitLab, Medium, ChatGPT) y el
 // Perfil de Empresa de Google, en docs/marca/redes/. No se publican con el
 // sitio: se suben a mano a cada perfil (docs/MARKETING.md §4).
-// Uso: cd herramientas && node redes.js
+// Uso: cd herramientas && node redes.js            (todas)
+//      cd herramientas && node redes.js play       (solo las que contengan «play»)
 
 const fs = require('fs')
 const path = require('path')
@@ -67,6 +68,19 @@ h1 { align-self: center; font-size: 52px; max-width: 800px; }
 ${logo}<h1>Software a la medida que lleva tu negocio de A a B</h1>
 <div class="fila"><span class="apoyo">Sistemas web, apps móviles y sitios web · alfredobarron.com</span>${tramo}</div>`
 
+// Imagen del encabezado del perfil de desarrollador de Google Play (16:9,
+// 4,096 × 2,304 exactos, PNG sin transparencia de hasta 1 MB). Play la recorta
+// distinto en teléfono y en escritorio: todo va centrado y con margen.
+const play = `${base}<style>
+body { width: 2048px; height: 1152px; padding: 176px 240px; display: grid; grid-template-rows: auto 1fr auto; }
+.logo { font-size: 48px; }
+h1 { align-self: center; font-size: 122px; max-width: 1440px; }
+.fila { display: flex; justify-content: space-between; align-items: center; font-size: 40px; }
+.tramo { font-size: 32px; }
+</style>
+${logo}<h1>Software a la medida, apps móviles y sitios web</h1>
+<div class="fila"><span class="apoyo">Monterrey, México · alfredobarron.com</span>${tramo}</div>`
+
 // Fotos del perfil de Google y publicaciones (4:3): una por servicio.
 const servicio = s => `${base}<style>
 body { width: 1200px; height: 900px; padding: 80px; display: grid; grid-template-rows: auto 1fr auto; }
@@ -78,17 +92,20 @@ h1 { align-self: center; font-size: 84px; max-width: 900px; }
 ${logo}<h1>${s.nombre}</h1>
 <div class="fila"><span class="apoyo">Monterrey y todo México · alfredobarron.com</span>${tramo}</div>`
 
+const SOLO = process.argv[2]
+
 const laminas = [
     ['linkedin-portada-1584x396', 1584, 396, linkedin],
     ['google-perfil-portada-1280x720', 1280, 720, google],
     ['chatgpt-portada-1200x400', 1200, 400, chatgpt],
+    ['google-play-encabezado-4096x2304', 2048, 1152, play],
     ...es.servicios.map(s => [`google-perfil-foto-${s.clave}-1200x900`, 1200, 900, servicio(s)]),
 ]
 
 ;(async () => {
     fs.mkdirSync(SALIDA, { recursive: true })
     const navegador = await chromium.launch()
-    for (const [nombre, ancho, alto, html] of laminas) {
+    for (const [nombre, ancho, alto, html] of laminas.filter(l => !SOLO || l[0].includes(SOLO))) {
         const pagina = await navegador.newPage({ viewport: { width: ancho, height: alto }, deviceScaleFactor: 2 })
         await pagina.setContent(html)
         await pagina.evaluate(() => document.fonts.ready)
@@ -97,6 +114,7 @@ const laminas = [
         console.log(nombre)
     }
     await navegador.close()
+    if (SOLO) return
     // Logo cuadrado (GitHub, GitLab, Medium y logo del perfil de Google) y la
     // foto con el tratamiento del sitio (LinkedIn).
     await sharp(path.join(RAIZ, 'docs/marca/png/ab-avatar.png')).resize(800, 800).png().toFile(path.join(SALIDA, 'logo-cuadrado-800.png'))

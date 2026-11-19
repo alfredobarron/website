@@ -604,6 +604,12 @@ const proyectos = [
             ['Tecnología', 'Laravel, React Native con Expo, MySQL y Amazon Web Services'],
             ['Sitio', '<a href="https://traeme.app" rel="noopener">traeme.app</a>'],
         ],
+        cifras: [
+            ['Pedidos entregados', 'Más de 100 mil'],
+            ['Tiendas registradas', 'Más de 500'],
+            ['Usuarios registrados', '19 mil'],
+            ['Repartidores', 'Más de 300'],
+        ],
         construi: [
             ['Una API para todo', 'Un solo servidor atiende a las tres apps, con las reglas del negocio en un mismo lugar.'],
             ['App del cliente', 'Para pedir, ver el costo del envío antes de confirmar y seguir al repartidor.'],

@@ -220,6 +220,27 @@ ${contacto(idioma, { mensaje: s.mensaje, titulo: s.cierre })}`
 // ── Página de proyecto ──────────────────────────────────────────────────
 
 function paginaProyecto(p, idioma) {
+    // «En cifras» solo sale si el proyecto trae `cifras`. Los bloques alternan papel y blanco
+    // contando desde el final: el último va en blanco, antes del contacto.
+    const dl = filas => `<dl class="ab-ficha">${filas.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join('')}</dl>`
+    const bloques = [
+        p.cifras && `            <div class="ab-ancho ab-dos">
+                <h2>En cifras</h2>
+                ${dl(p.cifras)}
+            </div>`,
+        `            <div class="ab-ancho ab-dos">
+                <h2>Ficha del proyecto</h2>
+                ${dl(p.ficha)}
+            </div>`,
+        `            <div class="ab-ancho ab-dos">
+                <h2>Lo que construí</h2>
+                <ul class="ab-lista">${p.construi.map(([n, t]) => `<li><h3>${n}</h3><p>${t}</p></li>`).join('')}</ul>
+            </div>`,
+        `            <div class="ab-ancho">
+                ${cabezaSeccion('Así se ve', p.galeria.bajada)}
+                ${galeria(p.galeria.lista)}
+            </div>`,
+    ].filter(Boolean)
     return `        <section class="ab-portada ab-portada--interior">
             <div class="ab-ancho">
                 ${migas(p.migas)}
@@ -239,24 +260,9 @@ function paginaProyecto(p, idioma) {
                 </div>
             </div>
         </section>
-        <section class="ab-seccion ab-seccion--blanca">
-            <div class="ab-ancho ab-dos">
-                <h2>Ficha del proyecto</h2>
-                <dl class="ab-ficha">${p.ficha.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join('')}</dl>
-            </div>
-        </section>
-        <section class="ab-seccion">
-            <div class="ab-ancho ab-dos">
-                <h2>Lo que construí</h2>
-                <ul class="ab-lista">${p.construi.map(([n, t]) => `<li><h3>${n}</h3><p>${t}</p></li>`).join('')}</ul>
-            </div>
-        </section>
-        <section class="ab-seccion ab-seccion--blanca">
-            <div class="ab-ancho">
-                ${cabezaSeccion('Así se ve', p.galeria.bajada)}
-                ${galeria(p.galeria.lista)}
-            </div>
-        </section>
+${bloques.map((b, i) => `        <section class="ab-seccion${(bloques.length - i) % 2 ? ' ab-seccion--blanca' : ''}">
+${b}
+        </section>`).join('\n')}
 ${contacto(idioma, { mensaje: p.mensaje, titulo: p.cierre })}`
 }
 

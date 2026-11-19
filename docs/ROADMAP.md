@@ -3,6 +3,23 @@
 La historia del sitio: lo hecho y lo decidido, con su porqué. Lo abierto vive en
 [PENDIENTES.md](PENDIENTES.md).
 
+## 2026-11-19 · Cifras en el caso de Tráeme
+
+El caso de Tráeme lleva un bloque «En cifras» antes de la ficha: más de 100 mil pedidos
+entregados, más de 500 tiendas registradas, 19 mil usuarios registrados y más de 300 repartidores.
+
+- **De dónde salen**: la base de producción, consultada el 2026-11-19, tiene 73,099 pedidos
+  entregados desde 2021, 485 tiendas, 19,392 usuarios y 307 repartidores con al menos una entrega.
+  Los pedidos de 2019 y 2020 están en una base de respaldo, y con ellos se pasa de 100 mil
+  (decisión de Alfredo); las tiendas se dejan en «más de 500» porque se llega pronto y así
+  coinciden con traeme.app.
+- **Lo que se dejó fuera**: la calificación de los clientes (4.79 de 5, pero solo en 989 pedidos),
+  las cifras por año (bajan desde 2021) y el tiempo de entrega (el promedio mezcla pedidos
+  agendados).
+- **Cómo se arma**: `paginaProyecto` pinta «En cifras» solo si el proyecto trae `cifras`, con la
+  misma lista de la ficha; los bloques alternan fondo contando desde el final, para que el último
+  quede en blanco antes del contacto.
+
 ## 2026-11-13 · Marca v1 y sitio nuevo
 
 Publicado en `master` el 2026-11-13 (commit `e44491c`).

@@ -9,9 +9,10 @@
 
 - [ ] **Foto nueva**: la actual (`herramientas/fuentes/alfredo-barron.jpg`) es de 2020 y mide
       400 px; alcanza para el círculo de «Quién construye tu software», no para una foto grande.
-- [ ] **Casos con cifras**: decidir qué números se publican de Tráeme (pedidos, usuarios, tiendas;
-      los del sitio de Tráeme no coinciden con los de la base), de Privada (cuando haya una privada
-      que autorice salir) y de Universidad Construrama (las cifras del programa son del cliente).
+- [ ] **Casos con cifras**: Tráeme ya las lleva (2026-11-19, [ROADMAP.md](ROADMAP.md)). Faltan las
+      de Privada (cuando haya una privada que autorice salir) y las de Universidad Construrama (las
+      cifras del programa son del cliente). El bloque «En cifras» sale solo al agregar `cifras` al
+      proyecto en `herramientas/sitio/datos-es.js`.
 - [ ] **Capturas de Tráeme**: cuando se actualicen sus apps y su sitio, cambiar la pantalla de la
       página de apps móviles (hoy es un recorte de su ficha de Google Play, en
       `herramientas/fuentes/traeme-app-pedido.png`) y agregar pantallas a su caso.
