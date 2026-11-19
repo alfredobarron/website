@@ -17,38 +17,128 @@
     <url>
         <loc>https://alfredobarron.com/desarrollo-de-software-a-la-medida/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/desarrollo-de-software-a-la-medida/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/custom-software-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/desarrollo-de-software-a-la-medida/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/custom-software-development/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/desarrollo-de-software-a-la-medida/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/custom-software-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/desarrollo-de-software-a-la-medida/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/desarrollo-de-apps-moviles/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/desarrollo-de-apps-moviles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/mobile-app-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/desarrollo-de-apps-moviles/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/mobile-app-development/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/desarrollo-de-apps-moviles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/mobile-app-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/desarrollo-de-apps-moviles/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/diseno-de-paginas-web/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/diseno-de-paginas-web/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/web-design/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/diseno-de-paginas-web/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/web-design/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/diseno-de-paginas-web/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/web-design/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/diseno-de-paginas-web/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/consultoria-de-software/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/consultoria-de-software/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/software-consulting/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/consultoria-de-software/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/software-consulting/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/consultoria-de-software/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/software-consulting/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/consultoria-de-software/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/proyectos/universidad-construrama/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/universidad-construrama/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/universidad-construrama/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/universidad-construrama/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/work/universidad-construrama/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/universidad-construrama/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/universidad-construrama/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/universidad-construrama/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/proyectos/auto-vision/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/auto-vision/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/auto-vision/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/auto-vision/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/work/auto-vision/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/auto-vision/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/auto-vision/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/auto-vision/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/proyectos/traeme/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/traeme/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/traeme/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/traeme/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/work/traeme/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/traeme/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/traeme/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/traeme/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/proyectos/privada/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/privada/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/privada/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/privada/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/work/privada/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/privada/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/privada/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/privada/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/proyectos/reportr/</loc>
         <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/reportr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/reportr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/reportr/"/>
+    </url>
+    <url>
+        <loc>https://alfredobarron.com/en/work/reportr/</loc>
+        <lastmod>2026-11-19</lastmod>
+        <xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/proyectos/reportr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/work/reportr/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/proyectos/reportr/"/>
     </url>
     <url>
         <loc>https://alfredobarron.com/reportr/privacidad.html</loc>

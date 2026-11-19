@@ -50,6 +50,8 @@ propios en producción, casos explicados y trato directo**, y por las búsquedas
 | `/consultoria-de-software/` | consultoría de software; arquitecto de software; consultoría AWS |
 | `/proyectos/…` (4 casos) | el nombre de cada proyecto y su tipo (app de entregas, software para fraccionamientos…) |
 | `/en/` | custom software developer Mexico (nearshore) |
+| `/en/custom-software-development/`, `/en/mobile-app-development/`, `/en/web-design/`, `/en/software-consulting/` | custom software development Mexico; iOS and Android app development Mexico; web design Mexico; software consulting, AWS architecture |
+| `/en/work/…` (5 casos) | el nombre de cada proyecto y su tipo en inglés (delivery app, software for gated communities…) |
 
 - Un `h1` por página con la búsqueda principal; títulos de menos de 65 caracteres y descripciones
   propias por página.

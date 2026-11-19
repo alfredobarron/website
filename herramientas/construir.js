@@ -41,51 +41,65 @@ function inicio(d, idioma, columnas) {
 inicio(es.inicio, 'es', es.columnas)
 inicio(en.inicio, 'en', en.columnas)
 
-// ── Servicios ───────────────────────────────────────────────────────────
-for (const s of es.servicios) {
-    const migas = [['/', 'Inicio'], ['/#servicios', 'Servicios'], [s.ruta, s.nombre]]
-    const datos = { ...s, migas, casos: { ...s.casos, lista: s.casos.lista.map(k => es.CASOS[k]) } }
-    escribir(s.ruta, P.documento({
-        ...s, idioma: 'es', columnas: es.columnas, tituloOg: s.h1,
-        cuerpo: S.paginaServicio(datos, 'es'),
-        ld: [
-            {
-                '@type': 'Service',
-                '@id': `${P.ORIGEN}${s.ruta}#servicio`,
-                name: s.nombre,
-                serviceType: s.tipoServicio,
-                description: s.descripcion,
-                url: P.ORIGEN + s.ruta,
-                provider: { '@id': `${P.ORIGEN}/#negocio` },
-                areaServed: [{ '@type': 'City', name: 'Monterrey' }, { '@type': 'Country', name: 'México' }],
-            },
-            P.migasLd(migas),
-            P.preguntasLd(s.preguntas),
-        ],
-    }))
-}
+// ── Servicios y proyectos (es y en) ─────────────────────────────────────
+// Cada página existe en los dos idiomas con la misma `clave`: de ahí salen el hreflang y la
+// liga del cambio de idioma.
+const IDIOMAS = [['es', es, 'es-MX'], ['en', en, 'en']]
+const alternosDe = (grupo, clave) => ({
+    'es-MX': es[grupo].find(x => x.clave === clave).ruta,
+    en: en[grupo].find(x => x.clave === clave).ruta,
+})
 
-// ── Proyectos ───────────────────────────────────────────────────────────
-for (const p of es.proyectos) {
-    const migas = [['/', 'Inicio'], ['/#proyectos', 'Proyectos'], [p.ruta, p.nombre]]
-    escribir(p.ruta, P.documento({
-        ...p, idioma: 'es', columnas: es.columnas, tituloOg: p.h1, tipoOg: 'article',
-        cuerpo: S.paginaProyecto({ ...p, migas }, 'es'),
-        ld: [
-            {
-                '@type': 'CreativeWork',
-                '@id': `${P.ORIGEN}${p.ruta}#proyecto`,
-                name: p.nombre,
-                headline: p.h1,
-                description: p.descripcion,
-                url: P.ORIGEN + p.ruta,
-                image: `${P.ORIGEN}/img/og/${p.og}.png`,
-                inLanguage: 'es-MX',
-                creator: { '@id': `${P.ORIGEN}/#persona` },
-            },
-            P.migasLd(migas),
-        ],
-    }))
+for (const [idioma, d, lengua] of IDIOMAS) {
+    const m = P.T[idioma].pagina.migas
+
+    for (const s of d.servicios) {
+        const migas = [m.inicio, m.servicios, [s.ruta, s.nombre]]
+        const datos = { ...s, migas, casos: { ...s.casos, lista: s.casos.lista.map(k => d.CASOS[k]) } }
+        escribir(s.ruta, P.documento({
+            ...s, idioma, columnas: d.columnas, tituloOg: s.h1, alternos: alternosDe('servicios', s.clave),
+            cuerpo: S.paginaServicio(datos, idioma),
+            ld: [
+                {
+                    '@type': 'Service',
+                    '@id': `${P.ORIGEN}${s.ruta}#servicio`,
+                    name: s.nombre,
+                    serviceType: s.tipoServicio,
+                    description: s.descripcion,
+                    url: P.ORIGEN + s.ruta,
+                    inLanguage: lengua,
+                    provider: { '@id': `${P.ORIGEN}/#negocio` },
+                    areaServed: idioma === 'es'
+                        ? [{ '@type': 'City', name: 'Monterrey' }, { '@type': 'Country', name: 'México' }]
+                        : [{ '@type': 'Country', name: 'Mexico' }, { '@type': 'Country', name: 'United States' }],
+                },
+                P.migasLd(migas),
+                P.preguntasLd(s.preguntas),
+            ],
+        }))
+    }
+
+    for (const p of d.proyectos) {
+        const migas = [m.inicio, m.proyectos, [p.ruta, p.nombre]]
+        escribir(p.ruta, P.documento({
+            ...p, idioma, columnas: d.columnas, tituloOg: p.h1, tipoOg: 'article', alternos: alternosDe('proyectos', p.clave),
+            cuerpo: S.paginaProyecto({ ...p, migas }, idioma),
+            ld: [
+                {
+                    '@type': 'CreativeWork',
+                    '@id': `${P.ORIGEN}${p.ruta}#proyecto`,
+                    name: p.nombre,
+                    headline: p.h1,
+                    description: p.descripcion,
+                    url: P.ORIGEN + p.ruta,
+                    image: `${P.ORIGEN}/img/og/${p.og}.png`,
+                    inLanguage: lengua,
+                    creator: { '@id': `${P.ORIGEN}/#persona` },
+                },
+                P.migasLd(migas),
+            ],
+        }))
+    }
 }
 
 // ── 404 ─────────────────────────────────────────────────────────────────
@@ -96,10 +110,18 @@ escribir(n.ruta, P.documento({
 }))
 
 // ── sitemap.xml ─────────────────────────────────────────────────────────
-const alternosInicio = ['<xhtml:link rel="alternate" hreflang="es-MX" href="https://alfredobarron.com/"/>', '<xhtml:link rel="alternate" hreflang="en" href="https://alfredobarron.com/en/"/>', '<xhtml:link rel="alternate" hreflang="x-default" href="https://alfredobarron.com/"/>']
+const hreflang = a => [
+    `<xhtml:link rel="alternate" hreflang="es-MX" href="${P.ORIGEN}${a['es-MX']}"/>`,
+    `<xhtml:link rel="alternate" hreflang="en" href="${P.ORIGEN}${a.en}"/>`,
+    `<xhtml:link rel="alternate" hreflang="x-default" href="${P.ORIGEN}${a['es-MX']}"/>`,
+]
+const pares = [
+    es.inicio.alternos,
+    ...es.servicios.map(s => alternosDe('servicios', s.clave)),
+    ...es.proyectos.map(p => alternosDe('proyectos', p.clave)),
+]
 const urls = [
-    ['/', alternosInicio], ['/en/', alternosInicio],
-    ...es.servicios.map(s => [s.ruta]), ...es.proyectos.map(p => [p.ruta]),
+    ...pares.flatMap(a => [[a['es-MX'], hreflang(a)], [a.en, hreflang(a)]]),
     ['/reportr/privacidad.html'],
 ]
 escribir('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
@@ -145,6 +167,11 @@ ${es.servicios.map(s => `- [${s.nombre}](${P.ORIGEN}${s.ruta}): ${s.respuesta}`)
 ## Proyectos
 
 ${es.proyectos.map(p => `- [${p.nombre}](${P.ORIGEN}${p.ruta}): ${p.respuesta}`).join('\n')}
+
+## In English
+
+${en.servicios.map(x => `- [${x.nombre}](${P.ORIGEN}${x.ruta}): ${x.respuesta}`).join('\n')}
+${en.proyectos.map(x => `- [${x.nombre}](${P.ORIGEN}${x.ruta}): ${x.respuesta}`).join('\n')}
 
 ## Cómo trabaja
 

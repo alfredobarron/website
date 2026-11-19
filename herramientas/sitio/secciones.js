@@ -167,14 +167,15 @@ function galeria(lista) {
 // ── Página de servicio ──────────────────────────────────────────────────
 
 function paginaServicio(s, idioma) {
+    const t = T[idioma].pagina
     return `        <section class="ab-portada ab-portada--interior">
             <div class="ab-ancho">
-                ${migas(s.migas)}
+                ${migas(s.migas, idioma)}
                 <h1>${s.h1}</h1>
                 <p class="ab-respuesta">${s.respuesta}</p>
                 <div class="ab-portada__acciones">
                     <a class="ab-boton" href="${whatsapp(s.mensaje)}" data-evento="whatsapp">${iconoWhatsapp}${T[idioma].cta}</a>
-                    <a class="ab-enlace" href="#casos">Ver proyectos de este tipo</a>
+                    <a class="ab-enlace" href="#casos">${t.verCasos}</a>
                 </div>
             </div>
         </section>
@@ -197,7 +198,7 @@ function paginaServicio(s, idioma) {
         <section id="casos" class="ab-seccion ab-seccion--blanca">
             <div class="ab-ancho">
                 ${cabezaSeccion(s.casos.titulo, s.casos.bajada)}
-                <div class="ab-casos">${s.casos.lista.map(c => tarjetaCaso(c, { rotuloA: 'Antes', rotuloB: 'Hoy' })).join('')}
+                <div class="ab-casos">${s.casos.lista.map(c => tarjetaCaso(c, { rotuloA: t.antes, rotuloB: t.hoy })).join('')}
                 </div>
             </div>
         </section>
@@ -213,37 +214,38 @@ ${s.muestra ? `        <section class="ab-seccion">
                 <div class="ab-prosa">${s.precio.parrafos.map(p => `<p>${p}</p>`).join('')}</div>
             </div>
         </section>
-${seccionPreguntas({ id: 'preguntas', titulo: 'Preguntas frecuentes', lista: s.preguntas }, !s.muestra)}
+${seccionPreguntas({ id: idioma === 'es' ? 'preguntas' : 'faq', titulo: t.preguntas, lista: s.preguntas }, !s.muestra)}
 ${contacto(idioma, { mensaje: s.mensaje, titulo: s.cierre })}`
 }
 
 // ── Página de proyecto ──────────────────────────────────────────────────
 
 function paginaProyecto(p, idioma) {
+    const t = T[idioma].pagina
     // «En cifras» solo sale si el proyecto trae `cifras`. Los bloques alternan papel y blanco
     // contando desde el final: el último va en blanco, antes del contacto.
     const dl = filas => `<dl class="ab-ficha">${filas.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join('')}</dl>`
     const bloques = [
         p.cifras && `            <div class="ab-ancho ab-dos">
-                <h2>En cifras</h2>
+                <h2>${t.cifras}</h2>
                 ${dl(p.cifras)}
             </div>`,
         `            <div class="ab-ancho ab-dos">
-                <h2>Ficha del proyecto</h2>
+                <h2>${t.ficha}</h2>
                 ${dl(p.ficha)}
             </div>`,
         `            <div class="ab-ancho ab-dos">
-                <h2>Lo que construí</h2>
+                <h2>${t.construi}</h2>
                 <ul class="ab-lista">${p.construi.map(([n, t]) => `<li><h3>${n}</h3><p>${t}</p></li>`).join('')}</ul>
             </div>`,
         `            <div class="ab-ancho">
-                ${cabezaSeccion('Así se ve', p.galeria.bajada)}
+                ${cabezaSeccion(t.asiSeVe, p.galeria.bajada)}
                 ${galeria(p.galeria.lista)}
             </div>`,
     ].filter(Boolean)
     return `        <section class="ab-portada ab-portada--interior">
             <div class="ab-ancho">
-                ${migas(p.migas)}
+                ${migas(p.migas, idioma)}
                 <h1>${p.h1}</h1>
                 <p class="ab-respuesta">${p.respuesta}</p>
             </div>

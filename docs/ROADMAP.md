@@ -3,6 +3,25 @@
 La historia del sitio: lo hecho y lo decidido, con su porqué. Lo abierto vive en
 [PENDIENTES.md](PENDIENTES.md).
 
+## 2026-11-19 · Servicios y casos en inglés
+
+El sitio pasa de 12 a 21 páginas: los cuatro servicios y los cinco casos ya existen en inglés,
+además del inicio. Con esto se cierra el pendiente «Páginas en inglés».
+
+- **Rutas**: `/en/custom-software-development/`, `/en/mobile-app-development/`, `/en/web-design/`,
+  `/en/software-consulting/` y `/en/work/<proyecto>/`, con nombres en inglés para que se busquen
+  solas.
+- **Cómo se emparejan**: cada página lleva la misma `clave` en `datos-es.js` y `datos-en.js`. De
+  ahí salen el `hreflang` de las dos versiones, sus entradas en `sitemap.xml` y la liga de cambio
+  de idioma, que ahora lleva a la misma página en el otro idioma y no al inicio.
+- **El inicio en inglés** ya liga a sus propias páginas de servicio y de caso (antes mandaba al
+  sitio de cada proyecto) y suma Reportr y la pregunta de si trabajo solo o con un equipo.
+- **Rótulos fijos** («Ficha del proyecto», «Lo que construí», «Preguntas frecuentes»…): salieron
+  de `secciones.js` a `T[idioma].pagina` en `plantilla.js`.
+- **Imágenes para compartir**: una por página en inglés (`img/og/*-en.png`), con `og.js`.
+- **`llms.txt`**: sección «In English» con las nueve páginas.
+- **Lo que queda en español**: la página 404 y `reportr/privacidad.html`.
+
 ## 2026-11-19 · Cifras en el caso de Tráeme
 
 El caso de Tráeme lleva un bloque «En cifras» antes de la ficha: más de 100 mil pedidos

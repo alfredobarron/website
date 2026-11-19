@@ -31,6 +31,19 @@ const T = {
         otroIdioma: ['/en/', 'English', 'en'],
         cta: 'Cotizar por WhatsApp',
         mensaje: 'Hola Alfredo, quiero cotizar un proyecto.',
+        // Rótulos fijos de las páginas de servicio y de proyecto.
+        pagina: {
+            ruta: 'Ruta',
+            migas: { inicio: ['/', 'Inicio'], servicios: ['/#servicios', 'Servicios'], proyectos: ['/#proyectos', 'Proyectos'] },
+            verCasos: 'Ver proyectos de este tipo',
+            antes: 'Antes',
+            hoy: 'Hoy',
+            preguntas: 'Preguntas frecuentes',
+            cifras: 'En cifras',
+            ficha: 'Ficha del proyecto',
+            construi: 'Lo que construí',
+            asiSeVe: 'Así se ve',
+        },
         pie: {
             frase: 'Software a la medida, apps móviles y sitios web. Monterrey, Nuevo León.',
             servicios: 'Servicios',
@@ -61,6 +74,18 @@ const T = {
         otroIdioma: ['/', 'Español', 'es-MX'],
         cta: 'Message me on WhatsApp',
         mensaje: 'Hi Alfredo, I would like a quote for a project.',
+        pagina: {
+            ruta: 'Breadcrumb',
+            migas: { inicio: ['/en/', 'Home'], servicios: ['/en/#services', 'Services'], proyectos: ['/en/#work', 'Work'] },
+            verCasos: 'See projects of this kind',
+            antes: 'Before',
+            hoy: 'Today',
+            preguntas: 'Frequently asked questions',
+            cifras: 'In numbers',
+            ficha: 'Project facts',
+            construi: 'What I built',
+            asiSeVe: 'How it looks',
+        },
         pie: {
             frase: 'Custom software, mobile apps and websites. Monterrey, Mexico.',
             servicios: 'Services',
@@ -142,8 +167,8 @@ function preguntasLd(preguntas) {
     }
 }
 
-function migas(lista) {
-    return `<nav aria-label="Ruta"><ol class="ab-migas">${lista.map(([url, nombre], i) =>
+function migas(lista, idioma = 'es') {
+    return `<nav aria-label="${T[idioma].pagina.ruta}"><ol class="ab-migas">${lista.map(([url, nombre], i) =>
         i === lista.length - 1 ? `<li aria-current="page">${esc(nombre)}</li>` : `<li><a href="${url}">${esc(nombre)}</a></li>`).join('')}</ol></nav>`
 }
 
@@ -176,10 +201,13 @@ function contacto(idioma, opciones = {}) {
     </section>`
 }
 
-function cabeza(idioma, actual) {
+// `alternos` es el de la página: si lo trae, el cambio de idioma lleva a la misma página en el
+// otro idioma y no al inicio.
+function cabeza(idioma, actual, alternos) {
     const t = T[idioma]
     const enlaces = t.nav.map(([url, nombre]) => `<a href="${url}"${actual === url ? ' aria-current="page"' : ''}>${nombre}</a>`).join('')
-    const [urlOtro, nombreOtro, langOtro] = t.otroIdioma
+    const [inicioOtro, nombreOtro, langOtro] = t.otroIdioma
+    const urlOtro = (alternos && alternos[langOtro]) || inicioOtro
     return `<a class="ab-saltar" href="#contenido">${t.saltar}</a>
     <header class="ab-cabeza">
         <div class="ab-ancho ab-cabeza__fila">
@@ -289,7 +317,7 @@ function documento(pagina) {
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', '${ANALITICA}')</script>
 </head>
 <body>
-    ${fuera(cabeza(idioma, pagina.actual))}
+    ${fuera(cabeza(idioma, pagina.actual, pagina.alternos))}
     <main id="contenido">
 ${fuera(cuerpo)}
     </main>

@@ -19,6 +19,8 @@ const laminas = [
     ['inicio-en', 'Custom software that takes your business from A to B', 'Web platforms, mobile apps and websites. Monterrey, Mexico'],
     ...es.servicios.map(s => [s.og, s.h1, 'Alfredo Barrón, arquitecto de software en Monterrey']),
     ...es.proyectos.map(p => [p.og, p.h1, 'Un proyecto de Alfredo Barrón']),
+    ...en.servicios.map(s => [s.og, s.h1, 'Alfredo Barrón, software architect in Monterrey, Mexico']),
+    ...en.proyectos.map(p => [p.og, p.h1, 'A project by Alfredo Barrón']),
 ]
 
 const html = (titulo, pie) => `<!doctype html><meta charset="utf-8"><style>

@@ -22,8 +22,8 @@ node construir.js      # regenera las páginas
 | Qué | Dónde |
 |---|---|
 | Textos en español (inicio, servicios, proyectos, preguntas) | `herramientas/sitio/datos-es.js` |
-| Textos de la portada en inglés | `herramientas/sitio/datos-en.js` |
-| Encabezado, pie, metadatos y datos estructurados | `herramientas/sitio/plantilla.js` |
+| Textos en inglés (inicio, servicios, proyectos); cada página se empareja con la de español por su `clave` | `herramientas/sitio/datos-en.js` |
+| Encabezado, pie, metadatos, datos estructurados y los rótulos fijos de cada idioma (`T`) | `herramientas/sitio/plantilla.js` |
 | El HTML de cada sección | `herramientas/sitio/secciones.js` |
 | Estilos | `css/sitio.css` (al cambiarlo, subir `VERSION` en `plantilla.js`) |
 | Pestañas de «De A a B» y eventos de contacto | `js/sitio.js` |
