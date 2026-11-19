@@ -3,6 +3,17 @@
 La historia del sitio: lo hecho y lo decidido, con su porqué. Lo abierto vive en
 [PENDIENTES.md](PENDIENTES.md).
 
+## 2026-11-19 · Correo con el dominio
+
+El sitio muestra `hola@alfredobarron.com` en lugar del Gmail: en el contacto de cada página, en el
+pie, en los datos estructurados y en `llms.txt` (es la constante `CORREO` de `plantilla.js`). Con
+esto se cierra el pendiente «Correo con el dominio».
+
+- **Cómo funciona**: forwardemail.net reenvía a Gmail y desde Gmail se responde con «Enviar como»
+  por SES. El detalle (DNS, usuario IAM) está en `~/Dev/ops/OPERACION.md` §alfredobarron.com.
+- **Lo que no cambió**: `reportr/privacidad.html` conserva el Gmail como contacto; va con su
+  pendiente de pasarlo a la marca o a un dominio de Reportr.
+
 ## 2026-11-19 · Servicios y casos en inglés
 
 El sitio pasa de 12 a 21 páginas: los cuatro servicios y los cinco casos ya existen en inglés,

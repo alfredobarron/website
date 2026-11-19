@@ -9,7 +9,7 @@ const ORIGEN = 'https://alfredobarron.com'
 const ANALITICA = 'G-H03GCQWQ13'
 const VERSION = '20261113e'
 const TELEFONO = '+52 81 1897 7886'
-const CORREO = 'alfredobarronc@gmail.com'
+const CORREO = 'hola@alfredobarron.com'
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 

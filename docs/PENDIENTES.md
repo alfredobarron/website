@@ -20,8 +20,6 @@
       demostración, para sus casos y la página de software a la medida (Privada ya la tiene).
 - [ ] **Artículos en español** para prospectos, uno al mes, dentro del sitio
       ([MARKETING.md](MARKETING.md) §5), y revisar Search Console cada mes.
-- [ ] **Correo con el dominio** (`hola@alfredobarron.com`) en lugar del de Gmail; el plan está en
-      `~/Dev/ops/OPERACION.md` §3 (reenvío + «Enviar como» por SES).
 - [ ] **Aplicaciones de la marca**: plantilla de cotización y firma de correo en HTML
       ([MARCA.md](MARCA.md) §8).
 - [ ] `reportr/privacidad.html` conserva su diseño propio: pasarlo a la marca o moverlo a un
