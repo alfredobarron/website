@@ -125,8 +125,10 @@ dueño o el cliente los autorizan ([PENDIENTES.md](PENDIENTES.md)).
 - **Firma de correo** ([marca/formatos/firma-correo.html](marca/formatos/firma-correo.html), en
   español y en inglés): el logo horizontal en blanco sobre un bloque pino de 172 × 44, el puesto,
   y el teléfono, el correo y el sitio. **El texto y las ligas no llevan color**: toman el de cada
-  cliente de correo, y la marca la lleva el logo. Con un solo color definido, Apple Mail deja de
-  aplicar el modo oscuro y pinta el correo entero sobre blanco. Va en tablas, y en el correo la
+  cliente de correo, y la marca la lleva el logo, que así se ve sobre claro y sobre oscuro. En
+  Apple Mail en modo oscuro el correo sale sobre blanco de todos modos: cualquier imagen en el
+  mensaje le quita el modo oscuro automático, y eso solo se evitaría con una firma sin logo. Va
+  en tablas, y en el correo la
   letra cae a Helvetica o Arial. Se regenera con `node firma.js` y se pega en Gmail con su botón
   «Copiar firma».
 - **Cotización** (ejemplo en [marca/formatos/cotizacion-ejemplo.pdf](marca/formatos/cotizacion-ejemplo.pdf)):

@@ -14,11 +14,17 @@ Las dos aplicaciones de la marca que faltaban ([MARCA.md](MARCA.md) §8); se cie
   publicado.
 - **La firma se rehízo el mismo día, sin colores propios.** La primera llevaba el logo pino
   sobre transparente (`img/marca/firma-logo.png`) y los textos en pino y gris con subrayado jade.
-  En Apple Mail en modo oscuro el correo entero salía sobre un cuadro blanco: Mail solo oscurece
-  los correos que no definen colores. Ahora el texto y las ligas toman el color de cada cliente y
+  En Apple Mail en modo oscuro el correo entero salía sobre un cuadro blanco y se pensó que era
+  por los colores. Ahora el texto y las ligas toman el color de cada cliente y
   el logo va en blanco sobre un bloque pino (`img/marca/firma-alfredo-barron.png`), que se ve
   sobre claro y sobre oscuro. El logo anterior se conserva porque lo cargan los correos ya
   enviados.
+- **El cuadro blanco de Apple Mail no se quitó**, y no depende de los colores: el correo de
+  prueba ya sin ningún color (revisado en su código fuente) siguió saliendo sobre blanco. Mail
+  solo aplica el modo oscuro automático a correos casi de texto plano, y una imagen basta para
+  quitárselo (guías de Litmus y Uplers; no hay documentación de Apple). Declarar soporte de modo
+  oscuro va en el encabezado del mensaje, que escribe Gmail. La única firma que saldría en oscuro
+  es una sin logo.
 - **Dos tropiezos de ese día**: el logo «no se veía» en iCloud porque Mail bloquea el contenido
   remoto hasta dar «Cargar contenido», no por el logo; y la primera firma pegada en Gmail
   apuntaba a `localhost`, porque se copió de una vista previa en la que Claude había cambiado la
