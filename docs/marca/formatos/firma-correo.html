@@ -15,6 +15,12 @@
     button { margin-top: 14px; font: inherit; font-weight: 600; color: #fff; background: #0E3B2E; border: 0; border-radius: 999px; padding: 10px 20px; cursor: pointer; }
     button:active { transform: scale(.97); }
     .aviso { color: #5A6B63; font-size: 15px; }
+    .firma { color: #000; }
+    .muestra { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    .muestra > div { padding: 20px; border-radius: 16px; background: #fff; color: #000; border: 1px solid #D9DFD8; }
+    .muestra .oscuro { background: #1E1E1E; border-color: #1E1E1E; color: #fff; }
+    .muestra .oscuro a { color: #8AB4F8; }
+    @media (max-width: 640px) { .muestra { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -26,36 +32,63 @@
         <li>En Gmail: Configuración → General → Firma → Crear nueva, y pega.</li>
         <li>Elígela para <strong>hola@alfredobarron.com</strong> en «Valores predeterminados de la firma».</li>
     </ol>
-    <p class="aviso">El logo se carga desde https://alfredobarron.com/img/marca/firma-logo.png: se ve en los correos cuando ese archivo ya está publicado en el sitio.</p>
+    <p class="aviso">El logo se carga desde https://alfredobarron.com/img/marca/firma-alfredo-barron.png: se ve en los correos cuando ese archivo ya está publicado en el sitio.</p>
 
-    <h2>Español</h2>
-    <div class="firma" id="firma-es"><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;color:#33473F;font-size:14px;line-height:1.5;">
-    <tr><td style="padding:0 0 12px 0;">
-        <a href="https://alfredobarron.com/"><img src="https://alfredobarron.com/img/marca/firma-logo.png" width="150" height="18" alt="Alfredo Barrón" style="display:block;border:0;"></a>
+    <p class="aviso">Así se ve en un correo claro y en uno oscuro. Es solo una muestra con la copia local del logo: la que se copia es la de abajo.</p>
+    <div class="muestra"><div><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;font-size:14px;line-height:1.5;">
+    <tr><td style="padding:0;">
+        <a href="https://alfredobarron.com/"><img src="../../../img/marca/firma-alfredo-barron.png" width="172" height="44" alt="Alfredo Barrón" style="display:block;border:0;"></a>
     </td></tr>
-    <tr><td style="padding:10px 0 0 0;border-top:1.5px solid #0A2A21;">
-        <span style="color:#0A2A21;font-weight:600;">Arquitecto de software</span><br>
-        <span style="color:#5A6B63;">Software a la medida, apps móviles y sitios web</span>
+    <tr><td style="padding:12px 0 0 0;">
+        <b>Arquitecto de software</b><br>
+        Software a la medida, apps móviles y sitios web
     </td></tr>
     <tr><td style="padding:8px 0 0 0;">
-        <a href="https://wa.me/528118977886" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">hola@alfredobarron.com</a><br>
-        <a href="https://alfredobarron.com/" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">alfredobarron.com</a> &nbsp;·&nbsp; <span style="color:#5A6B63;">Monterrey, Nuevo León</span>
+        <a href="https://wa.me/528118977886">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com">hola@alfredobarron.com</a><br>
+        <a href="https://alfredobarron.com/">alfredobarron.com</a> &nbsp;·&nbsp; Monterrey, Nuevo León
+    </td></tr>
+</table></div><div class="oscuro"><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;font-size:14px;line-height:1.5;">
+    <tr><td style="padding:0;">
+        <a href="https://alfredobarron.com/"><img src="../../../img/marca/firma-alfredo-barron.png" width="172" height="44" alt="Alfredo Barrón" style="display:block;border:0;"></a>
+    </td></tr>
+    <tr><td style="padding:12px 0 0 0;">
+        <b>Arquitecto de software</b><br>
+        Software a la medida, apps móviles y sitios web
+    </td></tr>
+    <tr><td style="padding:8px 0 0 0;">
+        <a href="https://wa.me/528118977886">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com">hola@alfredobarron.com</a><br>
+        <a href="https://alfredobarron.com/">alfredobarron.com</a> &nbsp;·&nbsp; Monterrey, Nuevo León
+    </td></tr>
+</table></div></div>
+
+    <h2>Español</h2>
+    <div class="firma" id="firma-es"><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;font-size:14px;line-height:1.5;">
+    <tr><td style="padding:0;">
+        <a href="https://alfredobarron.com/"><img src="https://alfredobarron.com/img/marca/firma-alfredo-barron.png" width="172" height="44" alt="Alfredo Barrón" style="display:block;border:0;"></a>
+    </td></tr>
+    <tr><td style="padding:12px 0 0 0;">
+        <b>Arquitecto de software</b><br>
+        Software a la medida, apps móviles y sitios web
+    </td></tr>
+    <tr><td style="padding:8px 0 0 0;">
+        <a href="https://wa.me/528118977886">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com">hola@alfredobarron.com</a><br>
+        <a href="https://alfredobarron.com/">alfredobarron.com</a> &nbsp;·&nbsp; Monterrey, Nuevo León
     </td></tr>
 </table></div>
     <button data-copiar="firma-es">Copiar firma</button>
 
     <h2>English</h2>
-    <div class="firma" id="firma-en"><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;color:#33473F;font-size:14px;line-height:1.5;">
-    <tr><td style="padding:0 0 12px 0;">
-        <a href="https://alfredobarron.com/en/"><img src="https://alfredobarron.com/img/marca/firma-logo.png" width="150" height="18" alt="Alfredo Barrón" style="display:block;border:0;"></a>
+    <div class="firma" id="firma-en"><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;font-size:14px;line-height:1.5;">
+    <tr><td style="padding:0;">
+        <a href="https://alfredobarron.com/en/"><img src="https://alfredobarron.com/img/marca/firma-alfredo-barron.png" width="172" height="44" alt="Alfredo Barrón" style="display:block;border:0;"></a>
     </td></tr>
-    <tr><td style="padding:10px 0 0 0;border-top:1.5px solid #0A2A21;">
-        <span style="color:#0A2A21;font-weight:600;">Software architect</span><br>
-        <span style="color:#5A6B63;">Custom software, mobile apps and websites</span>
+    <tr><td style="padding:12px 0 0 0;">
+        <b>Software architect</b><br>
+        Custom software, mobile apps and websites
     </td></tr>
     <tr><td style="padding:8px 0 0 0;">
-        <a href="https://wa.me/528118977886" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">hola@alfredobarron.com</a><br>
-        <a href="https://alfredobarron.com/en/" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">alfredobarron.com/en</a> &nbsp;·&nbsp; <span style="color:#5A6B63;">Monterrey, Mexico</span>
+        <a href="https://wa.me/528118977886">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com">hola@alfredobarron.com</a><br>
+        <a href="https://alfredobarron.com/en/">alfredobarron.com/en</a> &nbsp;·&nbsp; Monterrey, Mexico
     </td></tr>
 </table></div>
     <button data-copiar="firma-en">Copiar firma</button>

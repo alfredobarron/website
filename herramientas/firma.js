@@ -1,7 +1,12 @@
 // Firma de correo de la marca (docs/MARCA.md §8), en español y en inglés.
 // Escribe docs/marca/formatos/firma-correo.html, una página con las dos firmas
 // y un botón para copiarlas, y el logo que la firma carga desde el sitio
-// (img/marca/firma-logo.png: hay que publicarlo para que se vea en los correos).
+// (img/marca/firma-alfredo-barron.png: hay que publicarlo para que se vea en
+// los correos). El logo va en blanco sobre un bloque pino y no en pino sobre
+// transparente: Apple Mail y otros clientes en modo oscuro ponen el fondo
+// negro y no tocan las imágenes, así que el logo pino desaparecía.
+// img/marca/firma-logo.png es el anterior: se conserva porque lo cargan los
+// correos ya enviados.
 // El HTML de la firma va en tablas y con estilos en línea, que es lo que
 // conservan Gmail y los demás clientes; la letra cae a Helvetica o Arial.
 // Uso: cd herramientas && node firma.js
@@ -15,29 +20,36 @@ const P = require('./sitio/plantilla')
 
 const RAIZ = path.join(__dirname, '..')
 const SALIDA = path.join(RAIZ, 'docs/marca/formatos')
-const LOGO = `${P.ORIGEN}/img/marca/firma-logo.png`
-// El logo se muestra a 150 px (el mínimo de la horizontal es 120) y se guarda al triple.
-const ANCHO = 150
-const ALTO = Math.round(ANCHO * 102 / 845)
+const ARCHIVO = 'img/marca/firma-alfredo-barron.png'
+const LOGO = `${P.ORIGEN}/${ARCHIVO}`
+// El bloque pino mide 172 × 44 y el logo dentro 140 px de ancho (el mínimo de la horizontal
+// es 120); se guarda al triple para pantallas de alta densidad.
+const ANCHO = 172
+const ALTO = 44
+const ANCHO_LOGO = 140
+const ESCALA = 3
 
 const FUENTE = `'Funnel Sans', Helvetica, Arial, sans-serif`
-const enlace = (href, texto) =>
-    `<a href="${href}" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">${texto}</a>`
 
-function firma(idioma) {
+// La firma NO define colores: ni en el texto ni en las ligas. Apple Mail solo pasa a modo
+// oscuro los correos sin colores propios; con uno solo, pinta el mensaje entero sobre blanco.
+// Así el texto toma el color de cada cliente (negro en claro, blanco en oscuro) y la marca la
+// lleva el logo. `src` solo cambia en la muestra de la página, que usa la copia local.
+function firma(idioma, src = LOGO) {
     const es = idioma === 'es'
     const telefono = P.TELEFONO.replace(/\D/g, '')
-    return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${FUENTE};color:#33473F;font-size:14px;line-height:1.5;">
-    <tr><td style="padding:0 0 12px 0;">
-        <a href="${P.ORIGEN}/${es ? '' : 'en/'}"><img src="${LOGO}" width="${ANCHO}" height="${ALTO}" alt="Alfredo Barrón" style="display:block;border:0;"></a>
+    const inicio = `${P.ORIGEN}/${es ? '' : 'en/'}`
+    return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${FUENTE};font-size:14px;line-height:1.5;">
+    <tr><td style="padding:0;">
+        <a href="${inicio}"><img src="${src}" width="${ANCHO}" height="${ALTO}" alt="Alfredo Barrón" style="display:block;border:0;"></a>
     </td></tr>
-    <tr><td style="padding:10px 0 0 0;border-top:1.5px solid #0A2A21;">
-        <span style="color:#0A2A21;font-weight:600;">${es ? 'Arquitecto de software' : 'Software architect'}</span><br>
-        <span style="color:#5A6B63;">${es ? 'Software a la medida, apps móviles y sitios web' : 'Custom software, mobile apps and websites'}</span>
+    <tr><td style="padding:12px 0 0 0;">
+        <b>${es ? 'Arquitecto de software' : 'Software architect'}</b><br>
+        ${es ? 'Software a la medida, apps móviles y sitios web' : 'Custom software, mobile apps and websites'}
     </td></tr>
     <tr><td style="padding:8px 0 0 0;">
-        ${enlace(`https://wa.me/${telefono}`, P.TELEFONO)} &nbsp;·&nbsp; ${enlace(`mailto:${P.CORREO}`, P.CORREO)}<br>
-        ${enlace(`${P.ORIGEN}/${es ? '' : 'en/'}`, `alfredobarron.com${es ? '' : '/en'}`)} &nbsp;·&nbsp; <span style="color:#5A6B63;">${es ? 'Monterrey, Nuevo León' : 'Monterrey, Mexico'}</span>
+        <a href="https://wa.me/${telefono}">${P.TELEFONO}</a> &nbsp;·&nbsp; <a href="mailto:${P.CORREO}">${P.CORREO}</a><br>
+        <a href="${inicio}">alfredobarron.com${es ? '' : '/en'}</a> &nbsp;·&nbsp; ${es ? 'Monterrey, Nuevo León' : 'Monterrey, Mexico'}
     </td></tr>
 </table>`
 }
@@ -59,6 +71,12 @@ const pagina = `<!doctype html>
     button { margin-top: 14px; font: inherit; font-weight: 600; color: #fff; background: #0E3B2E; border: 0; border-radius: 999px; padding: 10px 20px; cursor: pointer; }
     button:active { transform: scale(.97); }
     .aviso { color: #5A6B63; font-size: 15px; }
+    .firma { color: #000; }
+    .muestra { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    .muestra > div { padding: 20px; border-radius: 16px; background: #fff; color: #000; border: 1px solid #D9DFD8; }
+    .muestra .oscuro { background: #1E1E1E; border-color: #1E1E1E; color: #fff; }
+    .muestra .oscuro a { color: #8AB4F8; }
+    @media (max-width: 640px) { .muestra { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -71,6 +89,9 @@ const pagina = `<!doctype html>
         <li>Elígela para <strong>${P.CORREO}</strong> en «Valores predeterminados de la firma».</li>
     </ol>
     <p class="aviso">El logo se carga desde ${LOGO}: se ve en los correos cuando ese archivo ya está publicado en el sitio.</p>
+
+    <p class="aviso">Así se ve en un correo claro y en uno oscuro. Es solo una muestra con la copia local del logo: la que se copia es la de abajo.</p>
+    <div class="muestra"><div>${firma('es', `../../../${ARCHIVO}`)}</div><div class="oscuro">${firma('es', `../../../${ARCHIVO}`)}</div></div>
 
     <h2>Español</h2>
     <div class="firma" id="firma-es">${firma('es')}</div>
@@ -108,8 +129,13 @@ const pagina = `<!doctype html>
 
 ;(async () => {
     fs.mkdirSync(SALIDA, { recursive: true })
-    await sharp(path.join(RAIZ, 'docs/marca/ab-horizontal.svg'), { density: 600 })
-        .resize({ width: ANCHO * 3 }).png().toFile(path.join(RAIZ, 'img/marca/firma-logo.png'))
+    const w = ANCHO * ESCALA, h = ALTO * ESCALA
+    const logo = await sharp(path.join(RAIZ, 'docs/marca/ab-horizontal-blanco.svg'), { density: 600 })
+        .resize({ width: ANCHO_LOGO * ESCALA }).png().toBuffer({ resolveWithObject: true })
+    const bloque = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><rect width="${w}" height="${h}" rx="${8 * ESCALA}" fill="#0E3B2E"/></svg>`)
+    await sharp(bloque)
+        .composite([{ input: logo.data, left: Math.round((w - logo.info.width) / 2), top: Math.round((h - logo.info.height) / 2) }])
+        .png().toFile(path.join(RAIZ, ARCHIVO))
     fs.writeFileSync(path.join(SALIDA, 'firma-correo.html'), pagina)
-    console.log('img/marca/firma-logo.png\ndocs/marca/formatos/firma-correo.html')
+    console.log(`${ARCHIVO}\ndocs/marca/formatos/firma-correo.html`)
 })()

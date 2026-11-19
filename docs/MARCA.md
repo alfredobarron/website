@@ -123,9 +123,12 @@ dueño o el cliente los autorizan ([PENDIENTES.md](PENDIENTES.md)).
 - **Perfiles**: `ab-avatar` como foto en todos; el mismo titular y la misma descripción
   ([MARKETING.md](MARKETING.md) §4).
 - **Firma de correo** ([marca/formatos/firma-correo.html](marca/formatos/firma-correo.html), en
-  español y en inglés): el logo horizontal a 150 px, un filete pino, el puesto, y el teléfono, el
-  correo y el sitio con subrayado jade. Va en tablas y estilos en línea, y en el correo la letra cae
-  a Helvetica o Arial. Se regenera con `node firma.js` y se pega en Gmail con su botón «Copiar firma».
+  español y en inglés): el logo horizontal en blanco sobre un bloque pino de 172 × 44, el puesto,
+  y el teléfono, el correo y el sitio. **El texto y las ligas no llevan color**: toman el de cada
+  cliente de correo, y la marca la lleva el logo. Con un solo color definido, Apple Mail deja de
+  aplicar el modo oscuro y pinta el correo entero sobre blanco. Va en tablas, y en el correo la
+  letra cae a Helvetica o Arial. Se regenera con `node firma.js` y se pega en Gmail con su botón
+  «Copiar firma».
 - **Cotización** (ejemplo en [marca/formatos/cotizacion-ejemplo.pdf](marca/formatos/cotizacion-ejemplo.pdf)):
   PDF tamaño carta. Abre con el tramo de A a B (el punto de partida en papel, la meta en pino con
   el punto jade); siguen «Qué incluye» y las etapas como listas con filete, con las etapas
