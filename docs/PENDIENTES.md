@@ -20,7 +20,5 @@
       demostración, para sus casos y la página de software a la medida (Privada ya la tiene).
 - [ ] **Artículos en español** para prospectos, uno al mes, dentro del sitio
       ([MARKETING.md](MARKETING.md) §5), y revisar Search Console cada mes.
-- [ ] **Aplicaciones de la marca**: plantilla de cotización y firma de correo en HTML
-      ([MARCA.md](MARCA.md) §8).
 - [ ] `reportr/privacidad.html` conserva su diseño propio: pasarlo a la marca o moverlo a un
       dominio de Reportr.

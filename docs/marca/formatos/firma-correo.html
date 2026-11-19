@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Firma de correo | Alfredo Barrón</title>
+<style>
+    body { margin: 0; padding: 40px 24px; background: #F2F4F0; color: #33473F; font: 16px/1.6 'Funnel Sans', Helvetica, Arial, sans-serif; }
+    main { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 28px; line-height: 1.1; color: #0A2A21; margin: 0 0 8px; }
+    h2 { font-size: 18px; color: #0A2A21; margin: 40px 0 12px; }
+    ol { padding-left: 20px; }
+    .firma { background: #fff; border: 1px solid #D9DFD8; border-radius: 16px; padding: 28px; }
+    button { margin-top: 14px; font: inherit; font-weight: 600; color: #fff; background: #0E3B2E; border: 0; border-radius: 999px; padding: 10px 20px; cursor: pointer; }
+    button:active { transform: scale(.97); }
+    .aviso { color: #5A6B63; font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+    <h1>Firma de correo</h1>
+    <p class="aviso">Se genera con <code>node firma.js</code>. No edites este archivo a mano.</p>
+    <ol>
+        <li>Da clic en «Copiar firma».</li>
+        <li>En Gmail: Configuración → General → Firma → Crear nueva, y pega.</li>
+        <li>Elígela para <strong>hola@alfredobarron.com</strong> en «Valores predeterminados de la firma».</li>
+    </ol>
+    <p class="aviso">El logo se carga desde https://alfredobarron.com/img/marca/firma-logo.png: se ve en los correos cuando ese archivo ya está publicado en el sitio.</p>
+
+    <h2>Español</h2>
+    <div class="firma" id="firma-es"><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;color:#33473F;font-size:14px;line-height:1.5;">
+    <tr><td style="padding:0 0 12px 0;">
+        <a href="https://alfredobarron.com/"><img src="https://alfredobarron.com/img/marca/firma-logo.png" width="150" height="18" alt="Alfredo Barrón" style="display:block;border:0;"></a>
+    </td></tr>
+    <tr><td style="padding:10px 0 0 0;border-top:1.5px solid #0A2A21;">
+        <span style="color:#0A2A21;font-weight:600;">Arquitecto de software</span><br>
+        <span style="color:#5A6B63;">Software a la medida, apps móviles y sitios web</span>
+    </td></tr>
+    <tr><td style="padding:8px 0 0 0;">
+        <a href="https://wa.me/528118977886" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">hola@alfredobarron.com</a><br>
+        <a href="https://alfredobarron.com/" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">alfredobarron.com</a> &nbsp;·&nbsp; <span style="color:#5A6B63;">Monterrey, Nuevo León</span>
+    </td></tr>
+</table></div>
+    <button data-copiar="firma-es">Copiar firma</button>
+
+    <h2>English</h2>
+    <div class="firma" id="firma-en"><table cellpadding="0" cellspacing="0" border="0" style="font-family:'Funnel Sans', Helvetica, Arial, sans-serif;color:#33473F;font-size:14px;line-height:1.5;">
+    <tr><td style="padding:0 0 12px 0;">
+        <a href="https://alfredobarron.com/en/"><img src="https://alfredobarron.com/img/marca/firma-logo.png" width="150" height="18" alt="Alfredo Barrón" style="display:block;border:0;"></a>
+    </td></tr>
+    <tr><td style="padding:10px 0 0 0;border-top:1.5px solid #0A2A21;">
+        <span style="color:#0A2A21;font-weight:600;">Software architect</span><br>
+        <span style="color:#5A6B63;">Custom software, mobile apps and websites</span>
+    </td></tr>
+    <tr><td style="padding:8px 0 0 0;">
+        <a href="https://wa.me/528118977886" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">+52 81 1897 7886</a> &nbsp;·&nbsp; <a href="mailto:hola@alfredobarron.com" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">hola@alfredobarron.com</a><br>
+        <a href="https://alfredobarron.com/en/" style="color:#0A2A21;text-decoration:underline;text-decoration-color:#19C37D;">alfredobarron.com/en</a> &nbsp;·&nbsp; <span style="color:#5A6B63;">Monterrey, Mexico</span>
+    </td></tr>
+</table></div>
+    <button data-copiar="firma-en">Copiar firma</button>
+</main>
+<script>
+    // Copia la firma con su formato (no como texto plano), que es lo que Gmail espera al pegar.
+    for (const boton of document.querySelectorAll('[data-copiar]')) {
+        boton.addEventListener('click', async () => {
+            const html = document.getElementById(boton.dataset.copiar).innerHTML
+            try {
+                await navigator.clipboard.write([new ClipboardItem({
+                    'text/html': new Blob([html], { type: 'text/html' }),
+                    'text/plain': new Blob([document.getElementById(boton.dataset.copiar).innerText], { type: 'text/plain' }),
+                })])
+            } catch {
+                const rango = document.createRange()
+                rango.selectNodeContents(document.getElementById(boton.dataset.copiar))
+                const s = getSelection(); s.removeAllRanges(); s.addRange(rango)
+                document.execCommand('copy'); s.removeAllRanges()
+            }
+            const antes = boton.textContent
+            boton.textContent = 'Copiada'
+            setTimeout(() => { boton.textContent = antes }, 1600)
+        })
+    }
+</script>
+</body>
+</html>

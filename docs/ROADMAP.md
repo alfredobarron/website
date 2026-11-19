@@ -3,6 +3,22 @@
 La historia del sitio: lo hecho y lo decidido, con su porqué. Lo abierto vive en
 [PENDIENTES.md](PENDIENTES.md).
 
+## 2026-11-19 · Firma de correo y plantilla de cotización
+
+Las dos aplicaciones de la marca que faltaban ([MARCA.md](MARCA.md) §8); se cierra el pendiente
+«Aplicaciones de la marca».
+
+- **Firma**: `herramientas/firma.js` escribe `docs/marca/formatos/firma-correo.html` con la firma
+  en español y en inglés y un botón que la copia con formato para pegarla en Gmail. El logo se
+  carga desde el sitio (`img/marca/firma-logo.png`), así que solo se ve en los correos una vez
+  publicado.
+- **Cotización**: `herramientas/cotizacion.js` arma un PDF tamaño carta desde un `.json` (cliente,
+  proyecto, A y B, alcance, etapas con precio y semanas, mantenimiento mensual, lo que no incluye
+  y condiciones) y calcula subtotal, IVA, total, duración y vigencia.
+- **Decidido**: las cotizaciones reales viven en `~/Datos-clientes/website/cotizaciones/` y no en
+  el repo, porque llevan datos de clientes; en el repo solo va el ejemplo, con una empresa
+  inventada. Las condiciones y los precios del ejemplo son de muestra: se ajustan en cada `.json`.
+
 ## 2026-11-19 · Correo con el dominio
 
 El sitio muestra `hola@alfredobarron.com` en lugar del Gmail: en el contacto de cada página, en el

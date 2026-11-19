@@ -1,0 +1,53 @@
+{
+    "folio": "2026-000",
+    "fecha": "2026-11-19",
+    "vigenciaDias": 30,
+    "cliente": {
+        "empresa": "Distribuidora Ejemplo, S.A. de C.V.",
+        "contacto": "Nombre de quien recibe la cotización",
+        "puesto": "Director general"
+    },
+    "proyecto": "Sistema de pedidos y entregas",
+    "resumen": "Un sistema web y una app para que tus vendedores levanten pedidos, el almacén los surta y cada cliente sepa cuándo llega su entrega.",
+    "a": [
+        "Los pedidos llegan por WhatsApp y se pasan a mano a una hoja de Excel.",
+        "El almacén se entera de los cambios por llamada.",
+        "Nadie sabe qué pedidos van retrasados hasta que el cliente reclama."
+    ],
+    "b": [
+        "Cada vendedor levanta el pedido desde su teléfono, con existencias al momento.",
+        "El almacén ve la lista de surtido ordenada por ruta.",
+        "El cliente recibe un aviso con la fecha de entrega y otro cuando sale el pedido."
+    ],
+    "alcance": [
+        ["Sistema web", "Clientes, productos, existencias, pedidos y reportes, con usuarios y permisos por rol."],
+        ["App para vendedores", "iOS y Android: catálogo, levantar pedido y consultar el estado de cada uno."],
+        ["Avisos al cliente", "Correo y WhatsApp al confirmar el pedido y al salir a entrega."],
+        ["Servidores", "Infraestructura en Amazon Web Services, con respaldos diarios y alertas."],
+        ["Capacitación", "Dos sesiones con tu equipo y un manual de uso."]
+    ],
+    "etapas": [
+        { "nombre": "Diseño y arquitectura", "entrega": "Las pantallas navegables y el plan técnico, aprobados contigo.", "semanas": 3, "precio": 45000 },
+        { "nombre": "Sistema web", "entrega": "Clientes, productos, pedidos y reportes funcionando con tus datos.", "semanas": 6, "precio": 120000 },
+        { "nombre": "App para vendedores", "entrega": "La app publicada en App Store y Google Play.", "semanas": 5, "precio": 95000 },
+        { "nombre": "Lanzamiento", "entrega": "Carga de la información inicial, capacitación y acompañamiento la primera semana.", "semanas": 2, "precio": 30000 }
+    ],
+    "moneda": "MXN",
+    "iva": 0.16,
+    "mensual": {
+        "concepto": "Mantenimiento mensual, opcional: servidores, monitoreo, respaldos, corrección de errores y hasta 8 horas de mejoras.",
+        "precio": 9500
+    },
+    "noIncluye": [
+        "Las cuentas de desarrollador de Apple (99 USD al año) y de Google (25 USD, pago único), que quedan a nombre de tu empresa.",
+        "El costo de los servidores en Amazon Web Services, que se factura a tu empresa según el uso.",
+        "Funciones que no estén descritas en el alcance: se cotizan aparte como una etapa nueva."
+    ],
+    "condiciones": [
+        "Cada etapa se paga 50 % al iniciarla y 50 % al entregarla.",
+        "Los precios son fijos para el alcance descrito y no incluyen IVA, que se desglosa en el total.",
+        "El código y los datos son de tu empresa desde el primer pago.",
+        "Las fechas cuentan a partir del anticipo de la primera etapa y de recibir la información que se pida."
+    ],
+    "siguiente": "Si estás de acuerdo, respóndeme este correo o escríbeme por WhatsApp y agendamos el arranque."
+}

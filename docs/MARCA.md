@@ -122,4 +122,12 @@ dueño o el cliente los autorizan ([PENDIENTES.md](PENDIENTES.md)).
   tramo A–B. Una por página, con `node og.js`.
 - **Perfiles**: `ab-avatar` como foto en todos; el mismo titular y la misma descripción
   ([MARKETING.md](MARKETING.md) §4).
-- **Pendientes de diseñar**: plantilla de cotización, firma de correo en HTML y portada de LinkedIn.
+- **Firma de correo** ([marca/formatos/firma-correo.html](marca/formatos/firma-correo.html), en
+  español y en inglés): el logo horizontal a 150 px, un filete pino, el puesto, y el teléfono, el
+  correo y el sitio con subrayado jade. Va en tablas y estilos en línea, y en el correo la letra cae
+  a Helvetica o Arial. Se regenera con `node firma.js` y se pega en Gmail con su botón «Copiar firma».
+- **Cotización** (ejemplo en [marca/formatos/cotizacion-ejemplo.pdf](marca/formatos/cotizacion-ejemplo.pdf)):
+  PDF tamaño carta. Abre con el tramo de A a B (el punto de partida en papel, la meta en pino con
+  el punto jade); siguen «Qué incluye» y las etapas como listas con filete, con las etapas
+  numeradas porque son secuencia; el total en Funnel Display; y cierra con un bloque pino con el
+  siguiente paso y el contacto. Se genera con `node cotizacion.js <datos.json>`.
