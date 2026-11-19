@@ -17,6 +17,10 @@
 - [Privada](https://alfredobarron.com/proyectos/privada/): Privada es un software mexicano para fraccionamientos, privadas y condominios. Une a los residentes, a la caseta y a la administración en un solo sistema: control de acceso con código QR, cobranza de cuotas con morosidad automática y bitácora de entradas y salidas con evidencia. Es un producto propio: lo diseñé y lo construí completo, incluido el equipo que abre la pluma.
 - [Reportr](https://alfredobarron.com/proyectos/reportr/): Reportr es una app para reportar desperfectos en edificios. El equipo que los detecta, por ejemplo el de limpieza, crea el reporte con fotos; el jefe de mantenimiento lo asigna a un técnico y todos siguen el avance hasta que queda resuelto. Diseñé y desarrollé la app y su servidor.
 
+## Artículos
+
+- [Software a la medida o software comercial: cómo decidir](https://alfredobarron.com/articulos/software-a-la-medida-o-comercial/): Conviene un software comercial cuando tu proceso es igual al de muchas otras empresas, como la contabilidad o la nómina. Conviene uno a la medida cuando el proceso es propio de tu negocio, ningún programa lo resuelve bien y lo que hoy pagas en licencias o en trabajo a mano ya pesa más que construirlo.
+
 ## In English
 
 - [Custom software development](https://alfredobarron.com/en/custom-software-development/): Custom software is a system built for the exact way your company works, instead of bending your operation to fit a generic program. I design it, build it and leave it running in the cloud.

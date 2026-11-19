@@ -11,6 +11,7 @@ const P = require('./sitio/plantilla')
 const S = require('./sitio/secciones')
 const es = require('./sitio/datos-es')
 const en = require('./sitio/datos-en')
+const { articulos, indice } = require('./sitio/articulos-es')
 
 const RAIZ = path.join(__dirname, '..')
 const HOY = new Date().toISOString().slice(0, 10)
@@ -33,12 +34,14 @@ function inicio(d, idioma, columnas) {
         S.proyectos(d.proyectos),
         S.pasos(d.pasos),
         S.sobre(d.sobre),
+        d.articulos && S.articulos(d.articulos),
         S.seccionPreguntas(d.preguntas),
         P.contacto(idioma),
-    ].join('\n')
+    ].filter(Boolean).join('\n')
     escribir(d.ruta, P.documento({ ...d, idioma, cuerpo, columnas, guion: true, ld: [P.preguntasLd(d.preguntas.lista)] }))
 }
-inicio(es.inicio, 'es', es.columnas)
+// El inicio en español lista los tres artículos más nuevos.
+inicio({ ...es.inicio, articulos: { id: 'articulos', titulo: 'Artículos', bajada: indice.respuesta, lista: articulos.slice(0, 3) } }, 'es', es.columnas)
 inicio(en.inicio, 'en', en.columnas)
 
 // ── Servicios y proyectos (es y en) ─────────────────────────────────────
@@ -102,6 +105,49 @@ for (const [idioma, d, lengua] of IDIOMAS) {
     }
 }
 
+// ── Artículos (solo en español) ─────────────────────────────────────────
+{
+    const m = P.T.es.pagina.migas
+    const migasIndice = [m.inicio, [indice.ruta, 'Artículos']]
+    escribir(indice.ruta, P.documento({
+        ...indice, idioma: 'es', columnas: es.columnas, tituloOg: 'Artículos sobre software para empresas',
+        cuerpo: S.paginaArticulos({ ...indice, migas: migasIndice, lista: articulos }, 'es'),
+        ld: [
+            { '@type': 'Blog', '@id': `${P.ORIGEN}${indice.ruta}#blog`, name: 'Artículos de Alfredo Barrón', url: P.ORIGEN + indice.ruta, inLanguage: 'es-MX', publisher: { '@id': `${P.ORIGEN}/#negocio` } },
+            P.migasLd(migasIndice),
+        ],
+    }))
+    for (const a of articulos) {
+        const migas = [m.inicio, [indice.ruta, 'Artículos'], [a.ruta, a.h1]]
+        // Minutos de lectura a 200 palabras por minuto, contando solo el texto del cuerpo.
+        const palabras = JSON.stringify(a.cuerpo).replace(/<[^>]+>/g, ' ').split(/\s+/).length
+        const datos = { ...a, migas, minutos: Math.max(1, Math.round(palabras / 200)), casos: (a.casos || []).map(k => es.CASOS[k]) }
+        escribir(a.ruta, P.documento({
+            ...a, idioma: 'es', columnas: es.columnas, tituloOg: a.h1, tipoOg: 'article',
+            cuerpo: S.paginaArticulo(datos, 'es'),
+            ld: [
+                {
+                    '@type': 'BlogPosting',
+                    '@id': `${P.ORIGEN}${a.ruta}#articulo`,
+                    headline: a.h1,
+                    description: a.descripcion,
+                    url: P.ORIGEN + a.ruta,
+                    mainEntityOfPage: P.ORIGEN + a.ruta,
+                    image: `${P.ORIGEN}/img/og/${a.og}.png`,
+                    datePublished: a.fecha,
+                    dateModified: a.actualizado || a.fecha,
+                    inLanguage: 'es-MX',
+                    author: { '@id': `${P.ORIGEN}/#persona` },
+                    publisher: { '@id': `${P.ORIGEN}/#negocio` },
+                    isPartOf: { '@id': `${P.ORIGEN}${indice.ruta}#blog` },
+                },
+                P.migasLd(migas),
+                ...(a.preguntas ? [P.preguntasLd(a.preguntas)] : []),
+            ],
+        }))
+    }
+}
+
 // ── 404 ─────────────────────────────────────────────────────────────────
 const n = es.noExiste
 escribir(n.ruta, P.documento({
@@ -122,13 +168,14 @@ const pares = [
 ]
 const urls = [
     ...pares.flatMap(a => [[a['es-MX'], hreflang(a)], [a.en, hreflang(a)]]),
+    [indice.ruta], ...articulos.map(a => [a.ruta, null, a.actualizado || a.fecha]),
     ['/reportr/privacidad.html'],
 ]
 escribir('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls.map(([ruta, alternos]) => `    <url>
+${urls.map(([ruta, alternos, fecha]) => `    <url>
         <loc>${P.ORIGEN}${ruta}</loc>
-        <lastmod>${ruta === '/reportr/privacidad.html' ? '2026-11-04' : HOY}</lastmod>${alternos ? '\n        ' + alternos.join('\n        ') : ''}
+        <lastmod>${fecha || (ruta === '/reportr/privacidad.html' ? '2026-11-04' : HOY)}</lastmod>${alternos ? '\n        ' + alternos.join('\n        ') : ''}
     </url>`).join('\n')}
 </urlset>
 `)
@@ -167,6 +214,10 @@ ${es.servicios.map(s => `- [${s.nombre}](${P.ORIGEN}${s.ruta}): ${s.respuesta}`)
 ## Proyectos
 
 ${es.proyectos.map(p => `- [${p.nombre}](${P.ORIGEN}${p.ruta}): ${p.respuesta}`).join('\n')}
+
+## Artículos
+
+${articulos.map(a => `- [${a.h1}](${P.ORIGEN}${a.ruta}): ${a.respuesta}`).join('\n')}
 
 ## In English
 

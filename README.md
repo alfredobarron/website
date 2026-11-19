@@ -22,6 +22,7 @@ node construir.js      # regenera las páginas
 | Qué | Dónde |
 |---|---|
 | Textos en español (inicio, servicios, proyectos, preguntas) | `herramientas/sitio/datos-es.js` |
+| Artículos (solo en español) | `herramientas/sitio/articulos-es.js` |
 | Textos en inglés (inicio, servicios, proyectos); cada página se empareja con la de español por su `clave` | `herramientas/sitio/datos-en.js` |
 | Encabezado, pie, metadatos, datos estructurados y los rótulos fijos de cada idioma (`T`) | `herramientas/sitio/plantilla.js` |
 | El HTML de cada sección | `herramientas/sitio/secciones.js` |
@@ -66,6 +67,8 @@ que servirlo desde la raíz; abrir el archivo con doble clic no carga los estilo
 
 ## Agregar una página
 
+- **Artículo**: agregar su objeto al inicio de la lista en `sitio/articulos-es.js` (el
+  encabezado del archivo explica los bloques) y correr `construir.js` y `og.js`.
 - **Servicio o proyecto**: agregar su objeto en `datos-es.js` (listas
   `servicios` o `proyectos`), su captura con `capturas.js`, y correr
   `construir.js` y `og.js`. El sitemap, el pie y `llms.txt` se actualizan solos.

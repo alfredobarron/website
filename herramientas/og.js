@@ -9,6 +9,7 @@ const { chromium } = require('playwright')
 const mono = require('./monograma.json')
 const es = require('./sitio/datos-es')
 const en = require('./sitio/datos-en')
+const { articulos } = require('./sitio/articulos-es')
 
 const RAIZ = path.join(__dirname, '..')
 const SALIDA = path.join(RAIZ, 'img/og')
@@ -21,6 +22,7 @@ const laminas = [
     ...es.proyectos.map(p => [p.og, p.h1, 'Un proyecto de Alfredo Barrón']),
     ...en.servicios.map(s => [s.og, s.h1, 'Alfredo Barrón, software architect in Monterrey, Mexico']),
     ...en.proyectos.map(p => [p.og, p.h1, 'A project by Alfredo Barrón']),
+    ...articulos.map(a => [a.og, a.h1, 'Un artículo de Alfredo Barrón']),
 ]
 
 const html = (titulo, pie) => `<!doctype html><meta charset="utf-8"><style>

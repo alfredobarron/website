@@ -268,4 +268,78 @@ ${b}
 ${contacto(idioma, { mensaje: p.mensaje, titulo: p.cierre })}`
 }
 
-module.exports = { portada, ruta, clientes, servicios, proyectos, pasos, sobre, seccionPreguntas, paginaServicio, paginaProyecto }
+// ── Artículos ───────────────────────────────────────────────────────────
+
+const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+const dia = iso => { const [a, m, d] = iso.split('-').map(Number); return `${d} de ${MESES[m - 1]} de ${a}` }
+
+// Lista de artículos con filete: la usan el inicio y /articulos/.
+function listaArticulos(lista) {
+    return `<ul class="ab-articulos">${lista.map(a => `
+                    <li><h3><a href="${a.ruta}">${a.h1}</a></h3><p>${a.descripcion}</p><time datetime="${a.fecha}">${dia(a.fecha)}</time></li>`).join('')}
+                </ul>`
+}
+
+// En el inicio va después de «Sobre mí», que tiene el mismo fondo: `--pegada` le quita el aire
+// de arriba para que no se junten dos.
+function articulos(d) {
+    return `        <section id="${d.id}" class="ab-seccion ab-seccion--pegada">
+            <div class="ab-ancho">
+                ${cabezaSeccion(d.titulo, d.bajada)}
+                ${listaArticulos(d.lista)}
+            </div>
+        </section>`
+}
+
+function paginaArticulos(d, idioma) {
+    return `        <section class="ab-portada ab-portada--interior">
+            <div class="ab-ancho">
+                ${migas(d.migas, idioma)}
+                <h1>${d.h1}</h1>
+                <p class="ab-respuesta">${d.respuesta}</p>
+            </div>
+        </section>
+        <section class="ab-seccion ab-seccion--blanca">
+            <div class="ab-ancho">
+                ${listaArticulos(d.lista)}
+            </div>
+        </section>
+${contacto(idioma)}`
+}
+
+const bloque = ([tipo, x]) => ({
+    h2: () => `<h2>${x}</h2>`,
+    p: () => `<p>${x}</p>`,
+    ul: () => `<ul>${x.map(i => `<li>${i}</li>`).join('')}</ul>`,
+    ol: () => `<ol>${x.map(i => `<li>${i}</li>`).join('')}</ol>`,
+    tabla: () => `<div class="ab-tabla"><table><thead><tr>${x.cabeza.map(c => `<th scope="col">${c}</th>`).join('')}</tr></thead><tbody>${x.filas.map(([primera, ...resto]) => `<tr><th scope="row">${primera}</th>${resto.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`,
+}[tipo]())
+
+function paginaArticulo(a, idioma) {
+    const t = T[idioma].pagina
+    return `        <section class="ab-portada ab-portada--interior">
+            <div class="ab-ancho">
+                ${migas(a.migas, idioma)}
+                <h1>${a.h1}</h1>
+                <p class="ab-respuesta">${a.respuesta}</p>
+                <p class="ab-articulo__meta">Alfredo Barrón · <time datetime="${a.fecha}">${dia(a.fecha)}</time>${a.actualizado ? ` · Actualizado el <time datetime="${a.actualizado}">${dia(a.actualizado)}</time>` : ''} · ${a.minutos} min de lectura</p>
+            </div>
+        </section>
+        <section class="ab-seccion ab-seccion--blanca">
+            <div class="ab-ancho">
+                <article class="ab-prosa ab-articulo">
+                    ${a.cuerpo.map(bloque).join('\n                    ')}
+                </article>
+            </div>
+        </section>
+${a.casos.length ? `        <section class="ab-seccion">
+            <div class="ab-ancho">
+                ${cabezaSeccion('Los proyectos que menciona')}
+                <div class="ab-casos">${a.casos.map(c => tarjetaCaso(c, { rotuloA: t.antes, rotuloB: t.hoy })).join('')}
+                </div>
+            </div>
+        </section>
+` : ''}${a.preguntas ? seccionPreguntas({ id: 'preguntas', titulo: t.preguntas, lista: a.preguntas }, true) + '\n' : ''}${contacto(idioma, { mensaje: a.mensaje, titulo: a.cierre })}`
+}
+
+module.exports = { portada, ruta, clientes, servicios, proyectos, pasos, sobre, seccionPreguntas, paginaServicio, paginaProyecto, articulos, paginaArticulos, paginaArticulo }

@@ -3,6 +3,22 @@
 La historia del sitio: lo hecho y lo decidido, con su porqué. Lo abierto vive en
 [PENDIENTES.md](PENDIENTES.md).
 
+## 2026-11-19 · Sección de artículos y el primero
+
+El sitio ya tiene artículos en `/articulos/` (solo en español), como pedía
+[MARKETING.md](MARKETING.md) §5.
+
+- **El primero**: «Software a la medida o software comercial: cómo decidir». Se eligió el segundo
+  de la lista porque el primero (cuánto cuesta una app) necesita rangos de precio que no se han
+  decidido publicar.
+- **Cómo se arma**: los artículos viven en `herramientas/sitio/articulos-es.js`, cada uno con su
+  respuesta de entrada, un cuerpo en bloques (subtítulo, párrafo, lista, lista numerada, tabla),
+  preguntas frecuentes y los casos que menciona. `construir.js` genera cada página con datos
+  estructurados `BlogPosting`, el índice, la lista de los tres más nuevos en el inicio, su
+  entrada en `sitemap.xml` (con la fecha del artículo) y en `llms.txt`; `og.js`, su imagen.
+- **Dónde se ligan**: en el inicio (después de «Sobre mí») y en el pie. No van en el menú de
+  arriba: con un enlace más, la barra ya no cabe entre 880 y 1040 px de ancho.
+
 ## 2026-11-19 · Firma de correo y plantilla de cotización
 
 Las dos aplicaciones de la marca que faltaban ([MARCA.md](MARCA.md) §8); se cierra el pendiente

@@ -18,7 +18,11 @@
       `herramientas/fuentes/traeme-app-pedido.png`) y agregar pantallas a su caso.
 - [ ] **Capturas del panel web** de Auto Vision y Universidad Construrama con datos de
       demostración, para sus casos y la página de software a la medida (Privada ya la tiene).
-- [ ] **Artículos en español** para prospectos, uno al mes, dentro del sitio
-      ([MARKETING.md](MARKETING.md) §5), y revisar Search Console cada mes.
+- [ ] **Artículos en español**, uno al mes ([MARKETING.md](MARKETING.md) §5). Publicado el
+      primero el 2026-11-19 (software a la medida o comercial). Siguen, en este orden: cómo publicar
+      una app en App Store y Google Play; qué preguntarle a un desarrollador antes de contratarlo;
+      el control de acceso con QR sin internet (Privada Box); y cuánto cuesta desarrollar una app
+      en México, que espera a que decidas qué rangos de precio publicar. Cada uno se comparte en
+      LinkedIn, y Search Console se revisa cada mes.
 - [ ] `reportr/privacidad.html` conserva su diseño propio: pasarlo a la marca o moverlo a un
       dominio de Reportr.

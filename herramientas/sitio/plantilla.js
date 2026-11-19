@@ -7,7 +7,7 @@ const mono = require('../monograma.json')
 const ORIGEN = 'https://alfredobarron.com'
 // ID de medición de Google Analytics 4 (propiedad 424908612).
 const ANALITICA = 'G-H03GCQWQ13'
-const VERSION = '20261113e'
+const VERSION = '20261119a'
 const TELEFONO = '+52 81 1897 7886'
 const CORREO = 'hola@alfredobarron.com'
 
@@ -49,6 +49,7 @@ const T = {
             servicios: 'Servicios',
             proyectos: 'Proyectos',
             contacto: 'Contacto',
+            articulos: ['/articulos/', 'Artículos'],
             derechos: 'Alfredo Barrón. Todos los derechos reservados.',
             hecho: 'Hecho en Monterrey.',
         },
@@ -238,6 +239,7 @@ function pie(idioma, columnas) {
                 <div class="ab-pie__marca">
                     <a class="ab-logo" href="${t.inicio}">${simbolo}<span>Alfredo Barrón</span></a>
                     <p>${p.frase}</p>
+                    ${p.articulos ? `<p><a href="${p.articulos[0]}">${p.articulos[1]}</a></p>` : ''}
                 </div>
                 ${col(p.servicios, columnas.servicios)}
                 ${col(p.proyectos, columnas.proyectos)}
