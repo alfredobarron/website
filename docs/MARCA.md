@@ -135,4 +135,9 @@ dueño o el cliente los autorizan ([PENDIENTES.md](PENDIENTES.md)).
   PDF tamaño carta. Abre con el tramo de A a B (el punto de partida en papel, la meta en pino con
   el punto jade); siguen «Qué incluye» y las etapas como listas con filete, con las etapas
   numeradas porque son secuencia; el total en Funnel Display; y cierra con un bloque pino con el
-  siguiente paso y el contacto. Se genera con `node cotizacion.js <datos.json>`.
+  siguiente paso y el contacto. **El folio es la fecha** (`2026-11-27`); si sale una segunda
+  cotización el mismo día, lleva un consecutivo al final (`2026-11-27-2`). El `.json` y el PDF se
+  llaman igual, folio y proyecto (`2026-11-27-universidad-construrama-2.0`), y viven en
+  `~/Datos-clientes/website/cotizaciones/`. Se genera con `node cotizacion.js <datos.json>`. Opcionales en el
+  `.json`: el alcance en grupos («Lo que se renueva», «Lo nuevo»), un descuento que se resta antes
+  del IVA, los pagos ligados a entregas (porcentaje y monto con IVA) y un mantenimiento aproximado.

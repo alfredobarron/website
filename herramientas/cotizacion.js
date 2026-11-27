@@ -2,7 +2,11 @@
 // de A a B con el punto de partida y la meta, el alcance, las etapas con
 // precio fijo y fecha, el total con IVA y las condiciones.
 // Los datos de cada cotización van en un .json con la forma de
-// formatos/cotizacion-ejemplo.json. Las cotizaciones reales llevan datos de
+// formatos/cotizacion-ejemplo.json. Opcionales: el alcance en grupos
+// ([{ "grupo": "…", "items": [[nombre, texto]] }]), un descuento (fracción,
+// 0.2 = 20 %) que se resta antes del IVA, pagos ligados a entregas
+// ([{ "nombre", "cuando", "porcentaje" }], sobre el total con IVA) y un
+// mantenimiento aproximado ("aproximado": true en "mensual"). Las cotizaciones reales llevan datos de
 // clientes: viven en ~/Datos-clientes/website/cotizaciones/, nunca en el repo.
 // Uso: cd herramientas && node cotizacion.js <datos.json> [salida.pdf]
 //      (sin salida, el PDF queda junto al .json con el mismo nombre)
@@ -33,10 +37,17 @@ function validar(d) {
 function html(d) {
     const moneda = d.moneda || 'MXN'
     const dinero = n => '$' + n.toLocaleString('es-MX', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 })
-    const subtotal = d.etapas.reduce((s, e) => s + e.precio, 0)
+    const centavos = n => Math.round(n * 100) / 100
+    const precioLista = d.etapas.reduce((s, e) => s + e.precio, 0)
+    const descuento = d.descuento ? centavos(precioLista * d.descuento) : 0
+    const subtotal = precioLista - descuento
     const tasa = d.iva ?? 0.16
-    const iva = Math.round(subtotal * tasa * 100) / 100
-    const total = subtotal + iva
+    const iva = centavos(subtotal * tasa)
+    const total = centavos(subtotal + iva)
+    // Cada pago es su porcentaje del total; el último se queda con los centavos que sobren.
+    const pagos = (d.pagos || []).map(p => ({ ...p, monto: centavos(total * p.porcentaje) }))
+    if (pagos.length) pagos[pagos.length - 1].monto = centavos(total - pagos.slice(0, -1).reduce((s, p) => s + p.monto, 0))
+    const filete = items => `<ul class="filete">${items.map(([n, t]) => `<li><strong>${P.esc(n)}</strong><span>${P.esc(t)}</span></li>`).join('')}</ul>`
     const plazo = d.etapas.reduce((s, e) => s + (e.semanas || 0), 0)
     const lista = (titulo, items) => items && items.length ? `
     <section class="bloque bloque--junto">
@@ -65,6 +76,8 @@ h1 { font-size: 27pt; line-height: 1.04; letter-spacing: -.035em; margin: 6mm 0 
 /* Las listas cortas (qué no incluye, condiciones) no se parten entre dos páginas. */
 .bloque--junto { break-inside: avoid; }
 h2 { font-size: 14pt; line-height: 1.15; margin-bottom: 3mm; break-after: avoid; }
+.grupo { font-size: 11pt; margin: 5mm 0 2mm; break-after: avoid; }
+.grupo:first-of-type { margin-top: 0; }
 
 /* De A a B: el punto de partida en gris, la meta en pino con el punto jade. */
 .tramo { margin-top: 8mm; display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; break-inside: avoid; }
@@ -124,7 +137,7 @@ ${d.a && d.b ? `<div class="tramo">
 </div>` : ''}
 <section class="bloque">
     <h2>Qué incluye</h2>
-    <ul class="filete">${d.alcance.map(([n, t]) => `<li><strong>${P.esc(n)}</strong><span>${P.esc(t)}</span></li>`).join('')}</ul>
+    ${d.alcance[0].grupo ? d.alcance.map(g => `<h3 class="grupo">${P.esc(g.grupo)}</h3>${filete(g.items)}`).join('') : filete(d.alcance)}
 </section>
 <section class="bloque">
     <h2>Etapas, fechas y precio</h2>
@@ -136,12 +149,23 @@ ${d.a && d.b ? `<div class="tramo">
     </table>
     <div class="totales">
         ${plazo ? `<div><span>Duración total</span><span>${semanas(plazo)}</span></div>` : ''}
+        ${descuento ? `<div><span>Precio de lista</span><span>${dinero(precioLista)}</span></div>
+        <div><span>Descuento (${Math.round(d.descuento * 100)} %)</span><span>−${dinero(descuento)}</span></div>` : ''}
         <div><span>Subtotal</span><span>${dinero(subtotal)}</span></div>
         <div><span>IVA (${Math.round(tasa * 100)} %)</span><span>${dinero(iva)}</span></div>
         <div class="total"><span>Total</span><span>${dinero(total)} ${moneda}</span></div>
     </div>
-    ${d.mensual ? `<div class="mensual"><p>${P.esc(d.mensual.concepto)}</p><strong>${dinero(d.mensual.precio)} ${moneda}<small>al mes, más IVA</small></strong></div>` : ''}
+    ${d.mensual ? `<div class="mensual"><p>${P.esc(d.mensual.concepto)}</p><strong>${d.mensual.aproximado ? '~' : ''}${dinero(d.mensual.precio)} ${moneda}<small>${d.mensual.aproximado ? 'aprox. al mes, más IVA' : 'al mes, más IVA'}</small></strong></div>` : ''}
 </section>
+${pagos.length ? `<section class="bloque bloque--junto">
+    <h2>Forma de pago</h2>
+    <table>
+        <thead><tr><th class="n"></th><th>Pago y cuándo</th><th class="plazo"></th><th class="precio">Monto con IVA</th></tr></thead>
+        <tbody>${pagos.map((p, i) => `
+            <tr><td class="n">${i + 1}</td><td class="etapa"><strong>${P.esc(p.nombre)}</strong><span>${P.esc(p.cuando)}</span></td><td class="plazo">${Math.round(p.porcentaje * 100)} %</td><td class="precio">${dinero(p.monto)}</td></tr>`).join('')}
+        </tbody>
+    </table>
+</section>` : ''}
 ${lista('Qué no incluye', d.noIncluye)}
 ${lista('Condiciones', d.condiciones)}
 <section class="cierre">
